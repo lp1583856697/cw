@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 //引入Mint-UI组件库
 import MintUI from "mint-ui"
+//引入mint-ui库中样式文件
 Vue.use(MintUI)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
