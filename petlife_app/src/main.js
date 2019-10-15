@@ -3,21 +3,23 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from "axios";
 
+axios.defaults.baseURL="http://127.0.0.1:4006/";//请求服务器的基础路径
+axios.defaults.withCredentials=true;//保存session信息
+Vue.prototype.axios=axios;
 
-//引入Mint-UI组件库
+//引入第三方组件库mint-ui
+//完整引入所有组件
 import MintUI from "mint-ui"
-//引入mint-ui库中样式文件
+//单独引入样式文件
 import "mint-ui/lib/style.css"
 //将mint-ui注册vue实例
 Vue.use(MintUI)
 
-//引入Vant组件库中轮播图组件
-import { Swipe, SwipeItem } from 'vant';
-//引入vant库中所有样式文件
-import "vant/lib/index.css"
-//将Swipe/SwipeItem注册vue实例
-Vue.use(Swipe).use(SwipeItem);
+import Vant from "vant"
+import "vant/lib/style.css"
+Vue.use(Vant)
 
 Vue.config.productionTip = false
 
