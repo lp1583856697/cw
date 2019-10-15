@@ -2,7 +2,7 @@
   <div>
     <div>
       <myhead
-      :imgurl1="require('../../assets/shezhi.png')" 
+      :imgurl1="require('../../assets/setting.png')" 
       :imgurl="require('../../assets/mm.jpg')"></myhead>
     </div>
   </div>
@@ -12,12 +12,11 @@
 import Myhead from "../common/Myhead"
 export default {
   data(){
-    return{
-      
+    return{  
     }
   },
   components:{
-    "myhead":Myhead
+    "myhead":Myhead,
   }
 }
 </script>

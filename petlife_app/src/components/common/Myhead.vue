@@ -1,8 +1,10 @@
 <template>
+<!-- "我的"页面的头部分 -->
   <div class="rootStyle">
-    <img :src="imgurl1" class="shezhi">
+    <img :src="imgurl1" class="setting">
     <div class="leftimgandlablestyle">
       <!-- <img :src="imgurl" alt="" class="imgStyle"> -->
+      <!-- 使用vant Image 图片中的圆形图片 -->
       <van-image round width="60px" height="60px" :src="imgurl" />
       <div class="rightOfImg">
         <span class="titleable">萌萌</span>
@@ -32,7 +34,7 @@ export default {
     justify-content: space-between;
     align-items: center;
   }
-  .shezhi{
+  .setting{
     position: absolute;
     top:30px;
     right:20px;
