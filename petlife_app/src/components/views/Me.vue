@@ -2,6 +2,7 @@
   <div>
     <div>
       <myhead
+      :imgurl1="require('../../assets/shezhi.png')" 
       :imgurl="require('../../assets/mm.jpg')"></myhead>
     </div>
   </div>

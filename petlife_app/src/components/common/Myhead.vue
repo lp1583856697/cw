@@ -1,24 +1,24 @@
 <template>
   <div class="rootStyle">
+    <img :src="imgurl1" class="shezhi">
     <div class="leftimgandlablestyle">
       <!-- <img :src="imgurl" alt="" class="imgStyle"> -->
-      <van-image round width="50px" height="50px" :src="imgurl" />
+      <van-image round width="60px" height="60px" :src="imgurl" />
       <div class="rightOfImg">
         <span class="titleable">萌萌</span>
         <span class="subtitle">这个人很懒,什么都没留下</span>
       </div>
-    </div>
-    <div class=""></div>
+    </div> 
   </div>
 </template>
 <script>
 export default {
   data(){
     return{
-
     }
   },
   props:{
+    imgurl1:{default:""},
     imgurl:{default:""}
   }
 }
@@ -32,20 +32,25 @@ export default {
     justify-content: space-between;
     align-items: center;
   }
+  .shezhi{
+    position: absolute;
+    top:30px;
+    right:20px;
+    width:30px;
+    height:30px
+  }
   .leftimgandlablestyle{
     display: flex;
-    padding: 40px 0 40px 20px;
+    padding: 50px 0 40px 20px;
   }
   .imgStyle{
     display: flex;
-    border-radius: 50%;
-    /* padding:30px; */
   }
   .rightOfImg{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left:10px;
+    margin-left:15px;
   }
   .titleable{
     color: #000;
@@ -56,7 +61,7 @@ export default {
   .subtitle{
     color:#333;
     font-size: 4px;
-    margin-top:4px;
+    margin-top:10px;
     text-align:left;
   }
 </style>
