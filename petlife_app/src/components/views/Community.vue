@@ -2,11 +2,13 @@
     <div>
         <pageheader></pageheader>
         <swipe :imglist="imglist"></swipe>
+        <tabbar></tabbar>
     </div>
 </template>
 <script>
 import Pageheader from "../common/Pageheader.vue"
 import Swipe from "../common/Swipe.vue"
+import Tabbar from "../common/Tabbar.vue"
 export default {
     data(){
         return {
@@ -15,7 +17,8 @@ export default {
     },
     components:{
         "pageheader":Pageheader,
-        "swipe":Swipe
+        "swipe":Swipe,
+        "tabbar":Tabbar
     }
 }
 </script>
