@@ -1,7 +1,8 @@
 <template>
   <div>
     <div>
-      <myhead :imgurl="require('../../assets/mm.jpg')"></myhead>
+      <myhead
+      :imgurl="require('../../assets/mm.jpg')"></myhead>
     </div>
   </div>
 </template>
