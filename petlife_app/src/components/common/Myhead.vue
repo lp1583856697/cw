@@ -1,12 +1,14 @@
 <template>
   <div class="rootStyle">
     <div class="leftimgandlablestyle">
-      <img :src="imgurl" alt="" class="imgStyle">
+      <!-- <img :src="imgurl" alt="" class="imgStyle"> -->
+      <van-image round width="50px" height="50px" :src="imgurl" />
       <div class="rightOfImg">
         <span class="titleable">萌萌</span>
         <span class="subtitle">这个人很懒,什么都没留下</span>
       </div>
     </div>
+    <div class=""></div>
   </div>
 </template>
 <script>
@@ -32,13 +34,10 @@ export default {
   }
   .leftimgandlablestyle{
     display: flex;
-    padding-top: 40px;
-    padding-left: 15px;
+    padding: 40px 0 40px 20px;
   }
   .imgStyle{
-    /* display: flex; */
-    width: 60px;
-    height: 60px;
+    display: flex;
     border-radius: 50%;
     /* padding:30px; */
   }
@@ -50,12 +49,13 @@ export default {
   }
   .titleable{
     color: #000;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
     text-align:left;
   }
   .subtitle{
     color:#333;
+    font-size: 4px;
     margin-top:4px;
     text-align:left;
   }
