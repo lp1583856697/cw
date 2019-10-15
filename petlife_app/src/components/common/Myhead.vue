@@ -19,11 +19,14 @@ export default {
   .rootStyle{
     display: flex;
     background-color: #ffd028;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
   }
   .imgStyle{
     /* display: flex; */
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    padding:30px;
   }
 </style>
