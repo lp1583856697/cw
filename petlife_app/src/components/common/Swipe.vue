@@ -19,5 +19,6 @@
 <style scoped>
     img{
         width:100%;  
+        border-radius:0 0 40% 40%;
     }
 </style>
