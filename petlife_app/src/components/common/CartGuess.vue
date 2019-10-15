@@ -19,6 +19,7 @@ export default {
   .container{
     display: flex;
     margin-top:18px;
+    margin-bottom:12px;
   }
   .leftline{
     display: flex;
