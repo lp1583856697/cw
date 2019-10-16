@@ -7,11 +7,13 @@ import Me from '../components/views/Me.vue'
 import Login from '../components/views/Login.vue'
 import Community from "../components/views/Community.vue"
 import Shopping from "../components/common/Shopping.vue"
+import Login1 from "../components/common/Login1.vue"
 
 //2.为组件指定访问路径
 Vue.use(Router)
 export default new Router({
   routes: [
+    {path:"/Login1",component:Login1},
     {path:"/Login",component:Login},
     {path:"/Me",component:Me},
     {path:"/Shopping",component:Shopping},
