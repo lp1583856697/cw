@@ -1,10 +1,10 @@
 <!--购物车顶部-->
 <template>
   <div class="container">
-    <h3>购物车</h3>
+    <h4>购物车</h4>
     <div class="topbg">
       <img :src="require('../../assets/empcar.png')" alt="">
-      <p id="p1">购物车空空如也</p>
+      <h3 id="p1">购物车空空如也</h3>
       <p>再忙，也要记得买点什么犒赏您的爱宠</p>
       <a href="">
         <mt-button>去逛逛</mt-button>
@@ -16,11 +16,12 @@
   .container{
     display: flex;
     background:#ffd028;
-    justify-content: center;
-    align-items: center;
     border-radius:0 0 35% 35%;
+    text-align: center;
+    flex-direction: column;
     }
-    h3{
-      z-index: 5;
-    }
+    h4{
+     text-align: center;
+    } 
+    
 </style>
