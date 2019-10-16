@@ -20,11 +20,11 @@ export default {
   data(){
     return{
       navlist:[
-        {pic:"book.png",text:"待付款"},
-        {pic:"book.png",text:"待发货"},
-        {pic:"book.png",text:"待收货"},
-        {pic:"book.png",text:"已完成"},
-        {pic:"book.png",text:"退款/售后"}
+        {pic:"pay1.png",text:"待付款"},
+        {pic:"pay2.png",text:"待发货"},
+        {pic:"pay3.png",text:"待收货"},
+        {pic:"pay4.png",text:"已完成"},
+        {pic:"pay5.png",text:"退款/售后"}
         ]
     }
   },
@@ -64,7 +64,9 @@ export default {
     align-items: center;
   }
   img{
-    width:30px;  
+    width: 20px;
+    height: 20px;
+    margin-bottom:5px;   
   }
   .text{
     color: #333;
