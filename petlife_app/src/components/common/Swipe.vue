@@ -37,7 +37,7 @@
 <style scoped>
     img{
         width:100%;  
-        border-radius:0 0 300px 300px/0 0 20px 20px; 
+        border-radius:0 0 300px 300px/0 0 20px 20px;  
     }
     .smallcircle{
         background:#fff;
