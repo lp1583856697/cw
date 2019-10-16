@@ -15,7 +15,6 @@ export default {
   },
   components:{
     "carttop":Carttop,
-    
     "cartcard":CartCard
   }
 }
