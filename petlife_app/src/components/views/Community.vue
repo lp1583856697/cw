@@ -14,6 +14,7 @@ export default {
         return {
             imglist:["1746014.jpg","1747083.jpg","1748028.jpg","1750155.jpg"]
         }
+        
     },
     components:{
         "pageheader":Pageheader,
