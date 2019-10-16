@@ -1,5 +1,5 @@
 <template>
-<!-- "我的"页面的头部分 -->
+<!-- "我的"页面的头部分 包含头像/昵称/个性签名以及设置 -->
   <div class="rootStyle">
     <img :src="imgurl1" class="setting">
     <div class="leftimgandlablestyle">
