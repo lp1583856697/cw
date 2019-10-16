@@ -6,11 +6,13 @@
       <mytabbar1 :count1="count1" :count2="count2" :count3="count3"></mytabbar1>
       <mytabbar2></mytabbar2>
       <mytabbar3></mytabbar3>
+      <mytabbar4></mytabbar4>
     </div>
   </div>
 </template>
 <script>
 //负责引入子组件
+import Mytabbar4 from "../common/Mytabbar4"
 import Mytabbar3 from "../common/Mytabbar3"
 import Mytabbar2 from "../common/Mytabbar2"
 import Mytabbar1 from "../common/Mytabbar1"
@@ -30,6 +32,7 @@ export default {
     "mytabbar1":Mytabbar1,
     "mytabbar2":Mytabbar2,
     "mytabbar3":Mytabbar3,
+    "mytabbar4":Mytabbar4,
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
-<!-- 导航三:"我的"页面中钱包部分 -->
+<!-- 导航四:"我的"页面中工具部分 -->
   <div class="nav">
-    <div class="floor2">
-      <span class="order">我的钱包</span>
+    <div class="floor3">
+      <span class="order">我的工具</span>
     </div>
     <ul>
       <li v-for="(item,i) of navlist" :key="i">
@@ -19,10 +19,14 @@ export default {
   data(){
     return{
       navlist:[
-        {pic:"img1.jpg",text:"账户余额"},
-        {pic:"img2.jpg",text:"邀请有礼"},
-        {pic:"img3.jpg",text:"我的优惠券"},
-        {pic:"img4.jpg",text:"积分"}
+        {pic:"img5.jpg",text:"健康"},
+        {pic:"img6.jpg",text:"我的拼团"},
+        {pic:"img7.jpg",text:"他秀"},
+        {pic:"img8.jpg",text:"知识库"},
+        {pic:"img9.jpg",text:"宠友帮"},
+        {pic:"img10.jpg",text:"我的宠物"},
+        {pic:"img11.jpg",text:"宠物宝典"},
+        {pic:"img12.jpg",text:"收货地址"}
         ]
     }
   },
@@ -36,9 +40,9 @@ export default {
     margin:0 auto;
     padding:10px 0;
     position:relative;
-    top:45px;
+    top:60px;
   }
-  .floor2{
+  .floor3{
     display: flex;
     justify-content: space-between;
     margin: 0 15px;
@@ -51,6 +55,7 @@ export default {
   ul{
     display:flex;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
   li a{
     display:flex;
@@ -60,8 +65,9 @@ export default {
   img{
     width: 45px;
     height: 45px;
-    margin-bottom:5px;
-    border-radius: 100%;   
+    padding: 0 12px;
+    margin-bottom:5px; 
+    border-radius: 100%;  
   }
   .text{
     color: #333;
