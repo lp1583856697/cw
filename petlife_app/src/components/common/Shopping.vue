@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="shopp">
     <!-- 顶部导航 -->
     <div class="top_nav" id="nav1">
       <!-- 第一行导航 -->
@@ -33,7 +33,63 @@
         <van-icon name="like" />
       </div>
     </van-swipe>
-    <div style="background:red;height:900px"></div>
+    <!-- 卡片 -->
+    <div class="card">
+      <!-- 跳转按钮 -->
+      <div class="card_l">
+        <!-- 文字 -->
+        <ul>
+          <li><img src="../../assets/store.png" alt="">超值拼团</li>
+          <li><img src="../../assets/car.png" alt="">超值拼团</li>
+          <li><img src="../../assets/car.png" alt="">超值拼团</li>
+          <li><img src="../../assets/car.png" alt="">超值拼团</li>
+          <li><img src="../../assets/car.png" alt="">超值拼团</li>
+          <li><img src="../../assets/car.png" alt="">超值拼团</li>
+          <li><img src="../../assets/car.png" alt="">超值拼团</li>
+          <li><img src="../../assets/car.png" alt="">超值拼团</li>
+        </ul>
+        <!-- 正品图 -->
+        <img src="../../assets/images/1749533.jpg" alt="">
+      </div>
+      <!-- 图一 -->
+      <img src="../../assets/images/1749533.jpg" alt="">
+      <!-- 图二 -->
+      <img src="../../assets/images/1749533.jpg" alt="">
+    </div>
+    <!-- 秒杀 -->
+    <div class="miao">
+      <h4>今日秒杀</h4>
+      <div class="miao_shop">
+        <ul>
+          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
+          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
+          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
+          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
+          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
+          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 各种专区 -->
+    <div class="zhuan">
+      <div class="zhuan_l">
+        <h4>狗粮专区</h4>
+        <div class="zhuan_shop">
+          <img src="../../assets/images/1749533.jpg" alt="">
+          <div class="uu">
+            <ul>
+              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
+              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
+              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
+              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
+              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
+              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
+            </ul>
+          </div>
+          
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -108,5 +164,99 @@ export default {
 #pos{
   position: absolute;
   bottom: 10px;left:50%;margin-left:-5px;
+}
+/* 卡片样式 */
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top:-4px;
+  background: #eee;
+}
+.card>img{
+  width: 85%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.card_l{
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.card_l>img{
+  width: 100%;
+  height:20px;
+}
+.card_l ul{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  height:160px;
+  background: #fff;
+}
+.card_l ul li{
+  width: 25%;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  
+}
+.card_l ul li img{
+  width: 40px;
+}
+/* 今日秒杀 */
+.miao{
+  width: 100%;
+  height: 250px;
+  box-sizing: border-box;
+}
+.miao>h4,.zhuan_l>h4{
+  margin-left: -280px;
+}
+.miao_shop{
+  width: 100%;
+  overflow: auto;
+}
+.miao_shop>ul{
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
+  list-style-type: none;
+}
+.miao_shop::-webkit-scrollbar {display:none} 
+/* 专区样式 */
+.zhuan{
+  box-sizing: border-box;
+  
+}
+.zhuan_shop{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #000;
+  margin: 0 3%;
+  border-radius: 10px;padding-top:10px; 
+}
+.uu{
+  width: 96%;
+  overflow: auto;
+  margin: 0 10px;
+}
+.uu::-webkit-scrollbar {display:none}
+.zhuan_shop>img{
+  width: 95%;
+  border-radius: 10px;
+}
+.uu>ul{
+  display: flex;
+  width: 600px;
+  justify-content: space-around;
+  margin-bottom: 5px;
 }
 </style>
