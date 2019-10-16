@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+
     <!-- 一、上面的猜你喜欢 -->
     <div class="like">
       <div class="leftline"></div>
@@ -23,6 +24,13 @@
         </div>
       </div>
     </div>
+    <!-- 底部的结算按钮 -->
+    <van-submit-bar
+      :price="0.00"
+      button-text="结算(0)"
+      @submit="onSubmit">
+      <van-checkbox v-model="checked">全选</van-checkbox>
+    </van-submit-bar>
   </div>
 </template>
 <script>
@@ -30,6 +38,10 @@ export default {
   data(){
     return{
       list:[
+        {title:"【Pure&Natural/伯纳天纯】伯纳天纯猫粮6.8kg*2袋",pic:"06.jpg",price:598,sale:0},
+        {title:"【Hoopet/华元宠具】hoopet猫头猫砂垫米猫用品",pic:"03.jpg",price:46.9,sale:0},
+        {title:"【Pure&Natural/伯纳天纯】伯纳天纯猫粮6.8kg*2袋",pic:"04.jpg",price:598,sale:0},
+        {title:"【Hoopet/华元宠具】hoopet猫头猫砂垫米猫用品",pic:"05.jpg",price:46.9,sale:0},
         {title:"【Pure&Natural/伯纳天纯】伯纳天纯猫粮6.8kg*2袋",pic:"06.jpg",price:598,sale:0},
         {title:"【Hoopet/华元宠具】hoopet猫头猫砂垫米猫用品",pic:"03.jpg",price:46.9,sale:0},
         {title:"【Pure&Natural/伯纳天纯】伯纳天纯猫粮6.8kg*2袋",pic:"04.jpg",price:598,sale:0},
@@ -77,19 +89,22 @@ export default {
     margin:1px 0 5px 5px;
   } 
   /* 下面的推荐商品 */
+  /* 最外层元素 */
   .recommend{
     display: flex;
-    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   .card{
     display: flex;
-    width:12rem;height:15rem;
+    width:48%;
     border-radius: 10px;
+    margin:0 3px 6px 3px;
     box-sizing: border-box;
     background:white;
     padding:15px;
     flex-direction: column;
-    margin:0 3px 6px 3px;
+    min-height:225px;
   }
    .card img{
     width:9rem;
@@ -110,5 +125,29 @@ export default {
   .card #sale{
     font-size:10px;
     color:#ccc;
+  }
+  /* 底部复选框样式 */
+
+  .van-submit-bar__price{
+    color:#ff8928;
+    font-size:14px;
+  }
+  /* .van-button{
+    width:88px;height:25px;
+    border-radius: 20px;
+    
+    font-size:14px;
+    align-items: center;
+  } */
+  .van-submit-bar__button {
+    width:88px;height:30px;
+    border-radius: 22px;
+    background: #ffd028;
+    color:black;
+    font-size:14px;
+    border:1px solid #ffd028;
+  }
+  .van-submit-bar__bar{
+    padding:9px 11px;
   }
 </style>

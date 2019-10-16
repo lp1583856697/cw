@@ -2,7 +2,10 @@
 <template>
   <div class="container">
     <div class="headcart">
-      <h3>购物车</h3>
+      <!-- 顶部固定栏-->
+      <div class="flexcart">
+        <h3>购物车</h3>
+      </div>
     </div>
     <div class="cart">
       <img :src="require('../../assets/empcar.png')" alt="">
@@ -14,6 +17,8 @@
     </div>
   </div>
 </template>
+<script>
+</script>
 <style scoped>
   .container{
     display: flex;
@@ -26,6 +31,14 @@
       height:134px;
       background:#ffd028;
       border-radius:0 0 300px 300px/0 0 20px 20px;
+    }
+    .container .headcart .flexcart{
+      background:#ffd028;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
     }
     h3{
       margin:42px 0 30px;
