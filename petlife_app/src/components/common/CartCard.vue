@@ -13,7 +13,7 @@
     <div class="recommend">
       <div class="card" v-for="(item,i) of list" :key="i">
       <!-- 二、商品图片 -->
-        <img :src="require('../../assets/'+list[i].pic)" alt="">
+        <img :src="require('../../assets/images/'+list[i].pic)" alt="">
         <!-- 商品名称 -->
         <div class="title">{{item.title}}</div>  
         <!-- 价格 -->
