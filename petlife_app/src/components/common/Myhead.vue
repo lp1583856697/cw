@@ -7,8 +7,8 @@
       <!-- 使用vant Image 图片中的圆形图片 -->
       <van-image round width="60px" height="60px" :src="imgurl" />
       <div class="rightOfImg">
-        <span class="titleable">萌萌</span>
-        <span class="subtitle">这个人很懒,什么都没留下</span>
+        <span class="titleable">{{name}}</span>
+        <span class="subtitle">{{speak}}</span>
         </div>
     </div> 
   </div>
@@ -21,7 +21,9 @@ export default {
   },
   props:{
     imgurl1:{default:""},
-    imgurl:{default:""}
+    imgurl:{default:""},
+    name:{default:""},
+    speak:{default:""}
   }
 }
 </script>
