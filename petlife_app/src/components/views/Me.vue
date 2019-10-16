@@ -31,7 +31,7 @@ export default {
     "mytabbar1":Mytabbar1,
     "mytabbar2":Mytabbar2,
     "mytabbar3":Mytabbar3,
-    "mytabbar4":Mytabbar4,
+    "mytabbar4":Mytabbar4
   }
 }
 </script>

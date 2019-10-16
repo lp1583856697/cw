@@ -4,6 +4,7 @@ import Router from 'vue-router'
 //将vue文件引入当前router下的index.js
 import Cart from '../components/views/Cart.vue'
 import Me from '../components/views/Me.vue'
+import Login from '../components/views/Login.vue'
 import Community from "../components/views/Community.vue"
 import Shopping from "../components/common/Shopping.vue"
 
@@ -11,6 +12,7 @@ import Shopping from "../components/common/Shopping.vue"
 Vue.use(Router)
 export default new Router({
   routes: [
+    {path:"/Login",component:Login},
     {path:"/Me",component:Me},
     {path:"/Shopping",component:Shopping},
     {path:"/cart",component:Cart},
