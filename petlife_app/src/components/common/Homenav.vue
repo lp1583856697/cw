@@ -1,13 +1,16 @@
 <template>
-    <div class="nav">
-        <ul>
-            <li v-for="(item,i) of navlist" :key="i">
-                <router-link to="">
-                    <img :src="require('../../assets/'+navlist[i].pic)">
-                    <span class="text">{{navlist[i].text}}</span>
-                </router-link>
-            </li>
-        </ul>
+    <div>
+        <div class="nav">
+            <ul>
+                <li v-for="(item,i) of navlist" :key="i">
+                    <router-link to="">
+                        <img :src="require('../../assets/'+navlist[i].pic)" class="smallImg">
+                        <span class="text">{{navlist[i].text}}</span>
+                    </router-link>
+                </li>
+            </ul>
+        </div>
+        <img src="../../assets/6a.jpg" class="bigImg">
     </div>
 </template>
 <script>
@@ -34,7 +37,7 @@ export default {
         position:relative;
         top:-2.5rem;
     }
-    img{
+    .smallImg{
         width:3.6rem;
     }
     ul{
@@ -48,6 +51,10 @@ export default {
     }
     .text{
         font-size:.8rem;
+    }
+    .bigImg{
+        width:21.5rem;
+        margin-top:-2rem;
     }
 </style>
 
