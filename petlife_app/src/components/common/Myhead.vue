@@ -9,7 +9,7 @@
       <div class="rightOfImg">
         <span class="titleable">{{name}}</span>
         <span class="subtitle">{{speak}}</span>
-        </div>
+      </div>
     </div> 
   </div>
 </template>
@@ -34,8 +34,7 @@ export default {
   .rootStyle{
     display: flex;
     background-color: #ffd028;
-    border-bottom-left-radius: 100%;
-    border-bottom-right-radius: 100%;
+    border-radius: 0 0 300px 300px/0 0 20px 20px; 
     justify-content: space-between;
     align-items: center;
   }
@@ -49,9 +48,6 @@ export default {
   .leftimgandlablestyle{
     display: flex;
     padding: 50px 0 40px 20px;
-  }
-  .imgStyle{
-    display: flex;
   }
   .rightOfImg{
     display: flex;
@@ -71,8 +67,4 @@ export default {
     margin-top:10px;
     text-align:left;
   }
-  /* .myButton{
-    position: absolute;
-    top: 175px;
-  } */
 </style>

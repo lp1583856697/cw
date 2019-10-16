@@ -1,6 +1,7 @@
 <template>
 <!-- 15px -->
   <div class="nav">
+    
     <ul class="a1">
       <li>{{count1}} 收藏</li>|
       <li>{{count2}} 关注</li>|
@@ -12,7 +13,6 @@
 export default {
   data(){
     return{
-
     }
   },
   props:{
