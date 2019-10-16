@@ -1,5 +1,5 @@
 <template>
-<!-- 导航一:"我的"页面中收藏/关注/粉丝部分 -->
+<!-- 15px -->
   <div class="nav">
     <ul class="a1">
       <li>{{count1}} 收藏</li>|
