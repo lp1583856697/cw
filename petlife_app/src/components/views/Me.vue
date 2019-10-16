@@ -5,11 +5,13 @@
       :imgurl1="require('../../assets/setting.png')" :imgurl="require('../../assets/mm.jpg')" :name="name" :speak="speak"></myhead>
       <mytabbar1 :count1="count1" :count2="count2" :count3="count3"></mytabbar1>
       <mytabbar2></mytabbar2>
+      <mytabbar3></mytabbar3>
     </div>
   </div>
 </template>
 <script>
 //负责引入子组件
+import Mytabbar3 from "../common/Mytabbar3"
 import Mytabbar2 from "../common/Mytabbar2"
 import Mytabbar1 from "../common/Mytabbar1"
 import Myhead from "../common/Myhead"
@@ -27,6 +29,7 @@ export default {
     "myhead":Myhead,
     "mytabbar1":Mytabbar1,
     "mytabbar2":Mytabbar2,
+    "mytabbar3":Mytabbar3,
   }
 }
 </script>
