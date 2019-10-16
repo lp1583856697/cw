@@ -3,7 +3,9 @@
   <div class="nav">
     <div class="floor1">
       <span class="order">我的订单</span>
-      <span class="all">查看全部</span>
+      <span class="all">查看全部
+        <van-icon name="arrow" />
+      </span>
     </div>
     <ul>
       <li v-for="(item,i) of navlist" :key="i">

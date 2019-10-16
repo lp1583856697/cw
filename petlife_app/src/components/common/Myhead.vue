@@ -40,7 +40,7 @@ export default {
   }
   .setting{
     position: absolute;
-    top:30px;
+    top:40px;
     right:20px;
     width:30px;
     height:30px
