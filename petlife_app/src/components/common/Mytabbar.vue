@@ -26,7 +26,7 @@ export default {
 .nav{
   width:21.5rem;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 2px;
   margin:0 auto;
   padding:10px 0;
   position:relative;
