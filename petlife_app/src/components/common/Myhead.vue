@@ -28,6 +28,9 @@ export default {
 }
 </script>
 <style scoped>
+  body{
+    position: relative;
+  }
   .rootStyle{
     display: flex;
     background-color: #ffd028;
