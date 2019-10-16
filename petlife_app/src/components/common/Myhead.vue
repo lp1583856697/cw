@@ -1,19 +1,16 @@
 <template>
 <!-- "我的"页面的头部分 -->
   <div class="rootStyle">
-    <div>
-      <img :src="imgurl1" class="setting">
-      <div class="leftimgandlablestyle">
-        <!-- <img :src="imgurl" alt="" class="imgStyle"> -->
-        <!-- 使用vant Image 图片中的圆形图片 -->
-        <van-image round width="60px" height="60px" :src="imgurl" />
-        <div class="rightOfImg">
-          <span class="titleable">萌萌</span>
-          <span class="subtitle">这个人很懒,什么都没留下</span>
+    <img :src="imgurl1" class="setting">
+    <div class="leftimgandlablestyle">
+      <!-- <img :src="imgurl" alt="" class="imgStyle"> -->
+      <!-- 使用vant Image 图片中的圆形图片 -->
+      <van-image round width="60px" height="60px" :src="imgurl" />
+      <div class="rightOfImg">
+        <span class="titleable">萌萌</span>
+        <span class="subtitle">这个人很懒,什么都没留下</span>
         </div>
-      </div> 
-    </div>
-    <van-button size="large" class="myButton">0 收藏 | 0 关注 | 0 粉丝</van-button>
+    </div> 
   </div>
 </template>
 <script>
@@ -69,8 +66,8 @@ export default {
     margin-top:10px;
     text-align:left;
   }
-  .myButton{
+  /* .myButton{
     position: absolute;
     top: 175px;
-  }
+  } */
 </style>
