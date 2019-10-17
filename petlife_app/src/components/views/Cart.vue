@@ -1,8 +1,8 @@
 <template>
   <div>
     <carttop></carttop>
-    <cartcard></cartcard>
-    <!-- <cartitem></cartitem>   -->
+    <cartitem></cartitem>
+    <cartcard></cartcard>   
   </div>
 </template>
 <script>
@@ -12,6 +12,9 @@ import CartItem from '../common/CartItem.vue'
 export default {
   data(){
     return{}
+  },
+  created() {
+    //创建成功添加生命周期
   },
   components:{
     "carttop":Carttop,

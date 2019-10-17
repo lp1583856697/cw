@@ -1,19 +1,23 @@
 <template>
-  <div class="container">
-    <div class="checkbox">
-      <van-checkbox v-model="checked"></van-checkbox>
-    </div>
-      <img :src="require('../../assets/images/goods2.jpg')" alt="">
-      <!-- 右侧文字 -->
-    <div class="rightcontent"> 
-      <div class="name">
-        【luscious/路斯】猫用小鱼干50g*3盒
+  <div class="container" >
+    <div class="item" v-for="(item,i) of list" :key="i">
+      <!-- 商品复选框-->
+      <div class="checkbox">
+        <van-checkbox @change="itemSelect" v-model="checked" checked-color="#ddd"></van-checkbox>
       </div>
-      <div class="subname">公鱼原味,50g*3盒</div>
-      <div><mt-button>普通</mt-button></div>
-      <div class="price">
-        <span>¥45.90</span>
-        <van-stepper v-model="value" />
+      <!-- 图片 -->
+      <img :src="require('../../assets/images/'+list[i].pic+'.jpg')" alt="">
+      <!-- 右侧文字 -->
+      <div class="rightcontent"> 
+        <div class="name">
+          {{item.name}}
+        </div>
+        <div class="subname">{{item.subname}}</div>
+        <div><mt-button>普通</mt-button></div>
+        <div class="price">
+          <span>¥{{item.price}}</span>
+          <van-stepper v-model="value" />
+        </div>
       </div>
     </div>
   </div>
@@ -22,51 +26,58 @@
 export default {
   data(){
     return{
-      checked:false,
-      value:1
+      checked:false,//全选按钮状态
+      value:1,
+      //购物车列表
+      list:[
+        {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"},
+        {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"},
+        {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"}
+      ]
     }
   }
 }
 </script>
 <style scoped>
 .container{
+  background:#f9f7f9;
+}
+.item{
   width:357px;
   height:138px;
   display: flex;
-  margin:0 auto;
-  border-radius: 12px; 
-  background:darkkhaki;
+  margin:8px auto;
+  border-radius: 12px;
+  background:white;
+  z-index:1; 
+  
 }
 /* 复选框样式 */
-.container .checkbox{
+.item .checkbox{
   margin:58px 5px;
 }
-.van-checkbox__icon--checked .van-icon {
-    color: #fff;
-    background-color: #f9f7f9;
-    border-color: #f9f7f9;
-}
-.container img{
+.item img{
   height:7rem;
   margin:10px 14px;
 }
+/* 右侧div文本内容 */
 .rightcontent{
   text-align: left;
   box-sizing: border-box;
   padding:12px 5px 5px 20px;
 }
+/* 右侧标题 */
  .rightcontent .name{
   font-size: 14px;
   padding-right: 10px;
   margin-bottom: 3px;
   position: relative;
-  /* text-align: left; */
 } 
+/* 右侧副标题 */
 .rightcontent .subname{
   font-size:8px;
   color:#ccc;
   margin-bottom:5px;
-  /* text-align: left; */
 }
 .rightcontent .mint-button {
   width:48px;

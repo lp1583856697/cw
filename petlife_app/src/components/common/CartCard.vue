@@ -1,13 +1,14 @@
 <template>
   <div class="container">
-
     <!-- 一、上面的猜你喜欢 -->
     <div class="like">
       <div class="leftline"></div>
-      <div class="text">
-        <img :src="require('../../assets/like.png')" alt="">
-        <span>猜你喜欢</span>
-      </div>
+      <div>
+        <van-divider :style="{ color: 'black', borderColor: '#ccc', padding: '0 16px' }">
+          <img :src="require('../../assets/like.png')" alt="">
+          猜你喜欢
+        </van-divider>
+    </div>
       <div class="rightline"></div>
     </div>
     <!-- 下面的商品推荐 -->
@@ -55,39 +56,9 @@ export default {
 .container{
   background:#f9f7f9;
 }
-/* --猜你喜欢-- */
-.like{
-    display: flex;
-    margin-top:-1px;
-    margin-bottom:12px;
-  }
-  .like .leftline{
-    display: flex;
-    width:85px;
-    border-bottom:1px solid #ccc;
-    margin:0 16px 12px 35px;
-    padding:5px;
-  }
-  .like .rightline{
-    display: flex;
-    width:85px;
-    border-bottom:1px solid #ccc;
-    margin:5px 16px 12px 18px;
-  }
-  /* 猜你喜欢文本 */
-  .text{
-    display: flex;
-    align-items: center;
-  }
-  .like img{
+.like img{
     width:1.5rem;
   }
-  .like .text span{
-    font-size:12px;
-    /* margin-bottom:2px;
-    margin-left:5px; */
-    margin:1px 0 5px 5px;
-  } 
   /* 下面的推荐商品 */
   /* 最外层元素 */
   .recommend{
@@ -146,6 +117,9 @@ export default {
     color:black;
     font-size:14px;
     border:1px solid #ffd028;
+  }
+  .van-button--large{
+    line-height: 30px;
   }
   .van-submit-bar__bar{
     padding:9px 11px;
