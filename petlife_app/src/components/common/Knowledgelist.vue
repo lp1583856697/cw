@@ -24,6 +24,7 @@ export default {
 <style scoped>
     ul{
         display:flex;
+        align-items: center;
         overflow: scroll;  
     }
     /* 消除滚动条 */

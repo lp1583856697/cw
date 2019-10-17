@@ -7,6 +7,8 @@
         <knowledgelist :cardlist="cardlist"></knowledgelist>
         <homemore :more="more1"></homemore>
         <commentlist :commentlist=commentlist></commentlist>
+        <homemore :more="more2"></homemore> 
+        <storylist :storylist="storylist"></storylist>      
     </div>
 </template>
 <script>
@@ -16,12 +18,14 @@ import Homenav from "../common/Homenav.vue"
 import Homemore from "../common/Homemore.vue"
 import Knowledgelist from "../common/Knowledgelist.vue"
 import Commentlist from "../common/Commentlist.vue"
+import Storylist from "../common/Storylist.vue"
 export default {
     data(){
         return {
             imglist:["1746014.jpg","1747083.jpg","1748028.jpg","1750155.jpg"],
             more:"养宠知识",
             more1:"铲屎官热议",
+            more2:"它嗅故事",
             cardlist:[
                 {
                     pic:"1746014.jpg",
@@ -63,6 +67,23 @@ export default {
                     comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
                     count:3
                 }
+            ],
+            storylist:[
+                {
+                    pic:"12.jpg",
+                    title:"搭建用户桥梁倾听宠物新生",
+                    text:"家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫..."
+                },
+                 {
+                    pic:"12.jpg",
+                    title:"搭建用户桥梁倾听宠物新生",
+                    text:"家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫..."
+                },
+                 {
+                    pic:"12.jpg",
+                    title:"搭建用户桥梁倾听宠物新生",
+                    text:"家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫..."
+                }
             ]
         }
 
@@ -73,7 +94,8 @@ export default {
         "homenav":Homenav,
         "homemore":Homemore,
         "knowledgelist":Knowledgelist,
-        "commentlist":Commentlist
+        "commentlist":Commentlist,
+        "storylist":Storylist
     }
 }
 </script>

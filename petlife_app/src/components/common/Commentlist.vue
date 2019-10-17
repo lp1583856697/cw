@@ -30,28 +30,39 @@ export default {
 </script>
 
 <style scoped>
+    /* > 字体大小和颜色 */
     .van-icon-arrow{
         color:#848689;
         font: 13px/1 "vant-icon";
     }
+    /* 所有a标签字体颜色 */
     a{
         color:black;
     }
+    /* 问和神评的背景色 */
     .van-tag--primary {
         background-color: #698bf6;
     }
-    .question{
-        background-color:#fff;
-        font-size:.9rem;
+    .van-tag {
+        margin-right: .5rem;
     }
+    /* 提问卡片 */
+    .question{
+        font-size:.9rem;
+        text-align: left;
+        margin-left:.5rem;
+    }
+    /* 评论卡片 */
     .comment{
         background:#f9f7f9;
         border-radius: .3rem;
         font-size:.8rem;
         padding:.5rem;
         margin:.8rem 0;
-        color:#cfcfcf;  
+        color:#cfcfcf; 
+        text-align: left;         
     }
+    /* 查看全部回答 */
     .allcomment{
         margin:.8rem 0;
         font-size:.75rem;
@@ -62,6 +73,7 @@ export default {
         background:#fff;
         padding:.8rem;
     }
+    /* 分割线 */
     .van-divider{
         border-color: #848689;
         margin-bottom:.8rem;
