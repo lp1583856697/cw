@@ -55,6 +55,7 @@ export default {
 <style scoped>
 .container{
   background:#f9f7f9;
+  margin-bottom:8rem;
 }
 .like img{
     width:1.5rem;
@@ -123,5 +124,8 @@ export default {
   }
   .van-submit-bar__bar{
     padding:9px 11px;
+  }
+  .van-submit-bar {
+    bottom: 46px;
   }
 </style>

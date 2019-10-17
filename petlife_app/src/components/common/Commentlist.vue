@@ -59,7 +59,8 @@ export default {
         font-size:.8rem;
         padding:.5rem;
         margin:.8rem 0;
-        color:#cfcfcf; 
+        /* color:#c2c0c0;  */
+        color:#979696; 
         text-align: left;         
     }
     /* 查看全部回答 */
@@ -75,7 +76,7 @@ export default {
     }
     /* 分割线 */
     .van-divider{
-        border-color: #848689;
+        border-color: #cfd0d1;        
         margin-bottom:.8rem;
     }
 </style>

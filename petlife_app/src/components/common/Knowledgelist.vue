@@ -26,11 +26,11 @@ export default {
         display:flex;
         align-items: center;
         overflow: scroll;  
+        background-color: #fff;
     }
     /* 消除滚动条 */
     ul::-webkit-scrollbar {display:none}
     ul li{
-        width:13rem;height:6rem;  /*li 宽高*/
         flex-shrink:0;  /*li不会因为空间不足缩小*/
         margin-left:.7rem; 
         margin-top:.7rem;
@@ -43,13 +43,13 @@ export default {
         margin-right:.7rem;
     }
     .dogImg{
-        width:100%;height:100%;
+        width:13rem;height:6rem;  /*宽高*/
         border-radius: .5rem;
     }
     .pageviews,.likecount{
         position: absolute;
         top:4.3rem;
-        font-size:.8rem;
+        font-size:.75rem;
         color:#fff;
     }
     /* 让元素水平居中！！！！面试 */
@@ -64,7 +64,7 @@ export default {
         position: absolute;
         top:.55rem;
         left:1rem;
-        font-size:.9rem;
+        font-size:.85rem;
         color:#fff;
     }
 </style>

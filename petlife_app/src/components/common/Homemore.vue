@@ -31,7 +31,7 @@ export default {
         padding:1.1rem 0;
     }
     .van-divider{
-        border-color: #848689;
+        border-color: #cfd0d1;        
         margin:0;
     }
     .title{
