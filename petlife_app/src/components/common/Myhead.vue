@@ -1,11 +1,11 @@
 <template>
 <!-- "我的"页面的头部分 包含头像/昵称/个性签名以及设置 -->
   <div class="rootStyle">
-    <img :src="imgurl1" class="setting">
+    <img src="../../assets/setting.png" class="setting">
     <div class="leftimgandlablestyle">
       <!-- <img :src="imgurl" alt="" class="imgStyle"> -->
       <!-- 使用vant Image 图片中的圆形图片 -->
-      <van-image round width="60px" height="60px" :src="imgurl" />
+      <van-image round width="70px" height="70px" :src="imgurl" />
       <div class="rightOfImg">
         <span class="titleable">{{name}}</span>
         <span class="subtitle">{{speak}}</span>
@@ -20,7 +20,6 @@ export default {
     }
   },
   props:{
-    imgurl1:{default:""},
     imgurl:{default:""},
     name:{default:""},
     speak:{default:""}
@@ -39,7 +38,7 @@ export default {
     align-items: center;
   }
   .setting{
-    position: absolute;
+    position: fixed;
     top:40px;
     right:20px;
     width:30px;
@@ -57,13 +56,13 @@ export default {
   }
   .titleable{
     color: #000;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     text-align:left;
   }
   .subtitle{
     color:#333;
-    font-size: 4px;
+    font-size: 8px;
     margin-top:10px;
     text-align:left;
   }

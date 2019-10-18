@@ -37,10 +37,12 @@ export default {
     width:21.5rem;
     background-color: #fff;
     border-radius: 2px;
-    margin:0 auto;
-    padding:10px 0;
+    /* margin:0 auto; */
+    padding:15px 0;
     position:relative;
     top:60px;
+    margin:0 15px 65px 15px;
+    
   }
   .floor3{
     display: flex;
@@ -49,7 +51,7 @@ export default {
   }
   .order{
     color: #000;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
   }
   ul{
@@ -63,14 +65,14 @@ export default {
     align-items: center;
   }
   img{
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     padding: 0 12px;
-    margin-bottom:5px; 
+    margin-bottom:4px; 
     border-radius: 100%;  
   }
   .text{
     color: #333;
-    font-size: 10px;
+    font-size: 12px;
   }
 </style>

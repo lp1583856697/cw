@@ -34,7 +34,7 @@ export default {
     background-color: #fff;
     border-radius: 2px;
     margin:0 auto;
-    padding:10px 0;
+    padding:15px 0;
     position:relative;
     top:45px;
   }
@@ -45,7 +45,7 @@ export default {
   }
   .order{
     color: #000;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
   }
   ul{
@@ -65,6 +65,6 @@ export default {
   }
   .text{
     color: #333;
-    font-size: 10px;
+    font-size: 12px;
   }
 </style>

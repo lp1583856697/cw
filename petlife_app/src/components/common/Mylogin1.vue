@@ -28,7 +28,7 @@ export default {
     padding-top: 150px;
   }
   .v1{
-    position: absolute;
+    position: fixed;
     top:40px;
     left:20px;
   }

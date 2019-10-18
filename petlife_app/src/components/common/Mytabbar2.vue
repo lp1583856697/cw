@@ -38,7 +38,7 @@ export default {
     background-color: #fff;
     border-radius: 2px;
     margin:0 auto;
-    padding:10px 0;
+    padding:15px 0;
     position:relative;
     top:30px;
   }
@@ -49,12 +49,12 @@ export default {
   }
   .order{
     color: #000;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
   }
   .all{
     color: #666;
-    font-size: 10px;
+    font-size: 12px;
   }
   ul{
     display:flex;
@@ -66,12 +66,12 @@ export default {
     align-items: center;
   }
   img{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     margin-bottom:5px;   
   }
   .text{
     color: #333;
-    font-size: 10px;
+    font-size: 12px;
   }
 </style>

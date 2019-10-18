@@ -27,7 +27,7 @@ export default {
   background-color: #fff;
   border-radius: 2px;
   margin:0 auto;
-  padding:10px 0;
+  padding:12px 0;
   position:relative;
   top:15px;
 } 
@@ -35,5 +35,6 @@ export default {
   display:flex;
   justify-content: space-around;
   padding: 0 15px;
+  font-size: 16px;
 }
 </style>
