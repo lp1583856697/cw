@@ -13,12 +13,7 @@
       <div class="second_nav">
         <ul class="list_style">
           <li class="active">推荐</li>
-          <li>狗粮</li>
-          <li>零食</li>
-          <li>保健品</li>
-          <li>清洁</li>
-          <li>日用</li>
-          <li>玩具</li>
+          <li v-for="(item,i) of list1" :key="i">{{item.zname}}</li>
         </ul>
       </div>
     </div>
@@ -39,14 +34,14 @@
       <div class="card_l">
         <!-- 文字 -->
         <ul>
-          <li><img src="../../assets/store.png" alt="">超值拼团</li>
-          <li><img src="../../assets/car.png" alt="">超值拼团</li>
-          <li><img src="../../assets/car.png" alt="">超值拼团</li>
-          <li><img src="../../assets/car.png" alt="">超值拼团</li>
-          <li><img src="../../assets/car.png" alt="">超值拼团</li>
-          <li><img src="../../assets/car.png" alt="">超值拼团</li>
-          <li><img src="../../assets/car.png" alt="">超值拼团</li>
-          <li><img src="../../assets/car.png" alt="">超值拼团</li>
+          <li><img src="../../assets/book.png" alt="">超值拼团</li>
+          <li><img src="../../assets/heath.png" alt="">0元免费领</li>
+          <li><img src="../../assets/img1.jpg" alt="">盘宠神器</li>
+          <li><img src="../../assets/img2.jpg" alt="">分享赚钱</li>
+          <li><img src="../../assets/img3.jpg" alt="">新品上新</li>
+          <li><img src="../../assets/img4.jpg" alt="">清仓特价</li>
+          <li><img src="../../assets/img5.jpg" alt="">纪念品</li>
+          <li><img src="../../assets/img6.jpg" alt="">积分兑换</li>
         </ul>
         <!-- 正品图 -->
         <img src="../../assets/images/1749533.jpg" alt="">
@@ -72,10 +67,10 @@
     </div>
     <!-- 各种专区 -->
     <div class="zhuan">
-      <div class="zhuan_l">
-        <h4>狗粮专区</h4>
+      <div class="zhuan_l" v-for="(item,i) of list1" :key="i">
+        <h4>{{item.zname}}专区</h4>
         <div class="zhuan_shop">
-          <img src="../../assets/images/1749533.jpg" alt="">
+          <img :src="`http://127.0.0.1:4006/${item.img_zhuan}`" alt="">
           <div class="uu">
             <ul>
               <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
@@ -86,15 +81,27 @@
               <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
             </ul>
           </div>
-          
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import axios from "axios"
 var nav1=document.getElementById("nav1");
 export default {
+  data(){
+    return {
+      list1:[]
+    }
+  },
+  created(){
+    var obj={pno:0,size:8}
+    axios.get("shop_zhuan",{params:obj}).then(result=>{
+      console.log(result.data.data);
+      this.list1=result.data.data;
+    })
+  },
   methods:{
 
   }
@@ -144,7 +151,7 @@ export default {
 /* ul样式 */
 .list_style{
   list-style-type: none;
-  width: 450px;
+  width: 550px;
   display: flex;
   justify-content: space-around;
 }
@@ -204,7 +211,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
   
 }
 .card_l ul li img{
@@ -242,6 +249,7 @@ export default {
   border: 1px solid #000;
   margin: 0 3%;
   border-radius: 10px;padding-top:10px; 
+  box-shadow:0 0 10px 2px #ccc;
 }
 .uu{
   width: 96%;

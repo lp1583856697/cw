@@ -18,3 +18,17 @@ gender VARCHAR(2)
 #用户表中插入数据
 INSERT INTO cw_user VAlUES(null,'tom',md5('123456'),'123456@163.com','18123456789','1');
 INSERT INTO cw_user VAlUES(null,'jerry',md5('654321'),'654321@163.com','13123456789','0');
+#商城专区表
+CREATE TABLE cw_zhuan(
+zid INT PRIMARY KEY AUTO_INCREMENT,
+zname VARCHAR(8),
+img_zhuan VARCHAR(32)
+);
+INSERT INTO cw_zhuan VALUES(null,"狗粮","01.jpg");
+INSERT INTO cw_zhuan VALUES(null,"零食","01.jpg");
+INSERT INTO cw_zhuan VALUES(null,"保健品","01.jpg");
+INSERT INTO cw_zhuan VALUES(null,"清洁","01.jpg");
+INSERT INTO cw_zhuan VALUES(null,"日用","01.jpg");
+INSERT INTO cw_zhuan VALUES(null,"窝具","01.jpg");
+INSERT INTO cw_zhuan VALUES(null,"服饰","01.jpg");
+INSERT INTO cw_zhuan VALUES(null,"玩具","01.jpg");
