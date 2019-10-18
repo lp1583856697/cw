@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <myhead :imgurl1="require('../../assets/setting.png')" :imgurl="require('../../assets/mm.jpg')" :name="name" :speak="speak"></myhead>
+      <myhead :imgurl="require('../../assets/mm.jpg')" :name="name" :speak="speak"></myhead>
       <mytabbar1 :count1="count1" :count2="count2" :count3="count3"></mytabbar1>
       <mytabbar2></mytabbar2>
       <mytabbar3></mytabbar3>
