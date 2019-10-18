@@ -3,7 +3,7 @@
     <div class="item" v-for="(item,i) of list" :key="i">
       <!-- 商品复选框-->
       <div class="checkbox">
-        <van-checkbox @change="itemSelect" v-model="checked" checked-color="#ddd"></van-checkbox>
+        <van-checkbox @change="itemSelect" v-model="item.checked" checked-color="#ddd"></van-checkbox>
       </div>
       <!-- 图片 -->
       <img :src="require('../../assets/images/'+list[i].pic+'.jpg')" alt="">
@@ -13,7 +13,7 @@
           {{item.name}}
         </div>
         <div class="subname">{{item.subname}}</div>
-        <div><mt-button>普通</mt-button></div>
+        <div><van-tag round type="warning">普通</van-tag></div>
         <div class="price">
           <span>¥{{item.price}}</span>
           <van-stepper v-model="value" />
@@ -26,7 +26,7 @@
 export default {
   data(){
     return{
-      checked:false,//全选按钮状态
+      checked:false,//商品复选框按钮状态
       value:1,
       //购物车列表
       list:[
@@ -35,12 +35,37 @@ export default {
         {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"}
       ]
     }
+  },
+  methods:{
+    itemSelect(){
+      //商品复选框的状态修改
+      //1.累加商品状态
+      //2.创建变量，保存累加的状态
+      var sum=0;
+      //3.创建循环遍历商品状态
+      for(var item of this.list){
+        if(item.checked){
+          //4.如果true,那么sum加1
+          sum++;
+        }
+      }
+      // console.log(sum);
+      // console.log(this.list.length)
+      //5.如果选中的数量与数组相同，将全选按钮的状态改为true
+      if(sum==this.list.length){
+        this.checkedAll=true;
+      }else{
+        this.checkedAll=false;
+      }
+      
+    }
   }
 }
 </script>
 <style scoped>
 .container{
   background:#f9f7f9;
+  margin:0 auto;
 }
 .item{
   width:357px;
@@ -78,14 +103,6 @@ export default {
   font-size:8px;
   color:#ccc;
   margin-bottom:5px;
-}
-.rightcontent .mint-button {
-  width:48px;
-  height:22px;
-  font-size:7px;
-  color:white;
-  background: #ffd028;
-  border-radius: 12px;
 }
 .container .rightcontent .price{
   display:flex;

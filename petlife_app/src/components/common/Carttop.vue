@@ -11,13 +11,21 @@
       <img :src="require('../../assets/empcar.png')" alt="">
       <h4 id="p1">购物车空空如也</h4>
       <p>再忙，也要记得买点什么犒赏您的爱宠</p>
-      <router-link to="">
-        <mt-button>去逛逛</mt-button>
-      </router-link>
+     <mt-button @click="jumpShopping">去逛逛</mt-button>
     </div>
   </div>
 </template>
 <script>
+export default {
+  data(){
+    return{}
+  },
+  methods:{
+    jumpShopping(){
+      this.$router.push("/Shopping")
+    }
+  }
+}
 </script>
 <style scoped>
   .container{

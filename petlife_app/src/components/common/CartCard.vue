@@ -2,14 +2,10 @@
   <div class="container">
     <!-- 一、上面的猜你喜欢 -->
     <div class="like">
-      <div class="leftline"></div>
-      <div>
         <van-divider :style="{ color: 'black', borderColor: '#ccc', padding: '0 16px' }">
           <img :src="require('../../assets/like.png')" alt="">
           猜你喜欢
         </van-divider>
-    </div>
-      <div class="rightline"></div>
     </div>
     <!-- 下面的商品推荐 -->
     <div class="recommend">
@@ -30,7 +26,7 @@
       :price="0.00"
       button-text="结算(0)"
       @submit="onSubmit">
-      <van-checkbox v-model="checked">全选</van-checkbox>
+      <van-checkbox v-model="checkedAll">全选</van-checkbox>
     </van-submit-bar>
   </div>
 </template>
@@ -55,11 +51,11 @@ export default {
 <style scoped>
 .container{
   background:#f9f7f9;
-  margin-bottom:8rem;
+  margin-bottom:7rem;
 }
 .like img{
     width:1.5rem;
-  }
+}
   /* 下面的推荐商品 */
   /* 最外层元素 */
   .recommend{
@@ -104,13 +100,6 @@ export default {
     color:#ff8928;
     font-size:14px;
   }
-  /* .van-button{
-    width:88px;height:25px;
-    border-radius: 20px;
-    
-    font-size:14px;
-    align-items: center;
-  } */
   .van-submit-bar__button {
     width:88px;height:30px;
     border-radius: 22px;
