@@ -46,7 +46,7 @@ export default {
         return;
       }
     //4.发送ajax请求
-      var url="login";
+      var url="login1";
       var obj={phone:p,upwd:u};
       //5.获取服务器返回结果
       this.axios.get(
@@ -56,10 +56,10 @@ export default {
         console.log(res.data.code);
         if(res.data.code<0){
           //6.登录失败提示消息
-          this.$messagebox("消息","手机号或密码错误");
+          this.$router.push("/Myreg");
         }else{
           //跳转Me组件
-          this.$router.push("../views/Me");
+          this.$router.push("/Me");
         }
       })
     },
@@ -67,7 +67,7 @@ export default {
 }
 </script>
 <style scoped>
-.login1{ 
+  .login1{ 
     position: relative;
     justify-content:space-between;
     flex-direction: column;
@@ -90,7 +90,7 @@ export default {
     font-size: 16px;
     letter-spacing: 2px;
     line-height: 30px;
-    /* -0background-color: #F8F6F8; */
+    background-color: #F8F6F8; 
   }
   .d1{
     display: flex;

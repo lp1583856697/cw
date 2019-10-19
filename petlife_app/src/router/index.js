@@ -9,11 +9,13 @@ import Community from "../components/views/Community.vue"
 import Shopping from "../components/common/Shopping.vue"
 import Login1 from "../components/common/Login1.vue"
 import CartItem from '../components/common/CartItem.vue'
+import Myreg from "../components/common/Myreg.vue"
 
 //2.为组件指定访问路径
 Vue.use(Router)
 export default new Router({
   routes: [
+    {path:"/Myreg",component:Myreg},
     {path:"/Login1",component:Login1},
     {path:"/Login",component:Login},
     {path:"/Me",component:Me},
