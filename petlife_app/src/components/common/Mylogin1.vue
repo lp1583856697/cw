@@ -50,7 +50,7 @@ export default {
     border-radius: 5px;
   }
   .s2{
-    color: #1B7BB2;
+    color: #1571FA;
     font-size: 15px;
     letter-spacing: 1px;
     font-weight: bold;
