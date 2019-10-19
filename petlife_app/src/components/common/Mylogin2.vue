@@ -90,6 +90,7 @@ export default {
     font-size: 16px;
     letter-spacing: 2px;
     line-height: 30px;
+    /* background-color: #F8F6F8; */
   }
   .d1{
     display: flex;
