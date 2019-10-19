@@ -42,5 +42,6 @@ export default {
   .i1{
     width: 70px;
     height: 70px;
+    border-radius: 100%;
   }
 </style>
