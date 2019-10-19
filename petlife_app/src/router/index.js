@@ -20,6 +20,7 @@ export default new Router({
     {path:"/Shopping",component:Shopping},
     {path:"/cart",component:Cart},
     {path:"/community",component:Community},
+    {path:"/",component:Community},
     {path:"/cartitem",component:CartItem}
   ]
 })
