@@ -1,24 +1,32 @@
-#123
-#设置客户端连接服务器端编码
+-- 123
+-- 设置客户端连接服务器端编码
 SET NAMES UTF8;
-#丢弃数据库，如果存在
+-- 丢弃数据库，如果存在
 DROP DATABASE IF EXISTS cw;
-#创建数据库，设置存储的编码
+-- 创建数据库，设置存储的编码
 CREATE DATABASE cw CHARSET=UTF8;
 USE cw;
-#创建用户表
-CREATE TABLE cw_user(
-id INT PRIMARY KEY AUTO_INCREMENT,
-uname VARCHAR(32),
-upwd VARCHAR(32),
-email VARCHAR(32),
-phone VARCHAR(11),
-gender VARCHAR(2)
+/*********************用户信息*********************/
+CREATE TABLE CW_user_login(
+  uid INT PRIMARY KEY AUTO_INCREMENT,
+  phone VARCHAR(16),
+  upwd VARCHAR(32),
+  avatar VARCHAR(128),        /*头像图片路径*/
+  gender INT                  /*性别  0-女  1-男*/
 );
-#用户表中插入数据
-INSERT INTO cw_user VAlUES(null,'tom',md5('123456'),'123456@163.com','18123456789','1');
-INSERT INTO cw_user VAlUES(null,'jerry',md5('654321'),'654321@163.com','13123456789','0');
-#商城专区表
+/*****************用户信息:数据*********************/
+INSERT INTO CW_user_login VALUES
+  (Null,'13112345671','web123456','img/avatar/default.png','0'
+  ),
+  (Null,'13112345672','web123456','img/avatar/default.png','1'
+  ),
+  (Null,'13112345673','web123456','img/avatar/default.png','1'
+  ),
+  (Null,'13112345674','web123456','img/avatar/default.png','0'
+  ),
+  (Null,'13112345675','123456','img/avatar/default.png','0'
+  );
+-- 商城专区表
 CREATE TABLE cw_zhuan(
 zid INT PRIMARY KEY AUTO_INCREMENT,
 zname VARCHAR(8),
