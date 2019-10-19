@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bgcolor">
     <carttop></carttop>
     <cartitem></cartitem>
     <cartcard></cartcard>   
@@ -23,3 +23,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.bgcolor{
+  background-color:#f9f7f9;
+}
+</style>
