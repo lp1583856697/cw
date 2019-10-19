@@ -40,3 +40,14 @@ INSERT INTO cw_zhuan VALUES(null,"日用","01.jpg");
 INSERT INTO cw_zhuan VALUES(null,"窝具","01.jpg");
 INSERT INTO cw_zhuan VALUES(null,"服饰","01.jpg");
 INSERT INTO cw_zhuan VALUES(null,"玩具","01.jpg");
+
+#首页轮播图
+CREATE TABLE sy_banner(
+    bid INT PRIMARY KEY AUTO_INCREMENT,
+    imgurl VARCHAR(32)
+);
+INSERT INTO sy_banner (bid,imgurl) VALUES
+(null,"sy_banner/1746014.jpg"),
+(null,"sy_banner/1747083.jpg"),
+(null,"sy_banner/1748028.jpg"),
+(null,"sy_banner/1750155.jpg")

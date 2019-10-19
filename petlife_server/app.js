@@ -11,6 +11,9 @@ const express = require("express");
 const mysql = require("mysql");
 const cors = require("cors");
 const session = require("express-session"); 
+//引入路由模块
+const community=require("./routers/community");
+
 //3:创建数据库连接池(池 提高效率)
 var pool = mysql.createPool({
     host:"127.0.0.1", //数据库地址
@@ -22,15 +25,15 @@ var pool = mysql.createPool({
 })
 //4:配置跨域模块
 //  允许哪个程序跨域访问服务器
-//  脚手架:3001 允许3001访问我
-//  服务器:4000 你
+//  脚手架:3006 允许3006访问我
+//  服务器:4006 你
 var server = express();
 server.use(cors({
   //允许程序列表
   origin:["http://localhost:3006"],
   credentials:true//每次请求需要验证
 }))
-//5:配置session模块?????????
+//5:配置session模块
 server.use(session({
    secret:"128位字符串",//安全字符串
    resave:true,//请求时更新数据
@@ -38,8 +41,10 @@ server.use(session({
 }))
 //6:配置项目静态目录 public
 server.use(express.static("public"))
-//7:创建express对象绑定4000端口
+//7:创建express对象绑定4006端口
 server.listen(4006);
+ //8.路由器管理路由
+server.use("/community",community)
 
 //1.获取商城专区数据
 server.get("/shop_zhuan",(req,res)=>{
