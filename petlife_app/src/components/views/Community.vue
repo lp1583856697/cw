@@ -12,6 +12,7 @@
     </div>
 </template>
 <script>
+import axios from "axios"
 import Pageheader from "../common/Pageheader.vue"
 import Swipe from "../common/Swipe.vue"
 import Homenav from "../common/Homenav.vue"
@@ -22,7 +23,7 @@ import Storylist from "../common/Storylist.vue"
 export default {
     data(){
         return {
-            imglist:["1746014.jpg","1747083.jpg","1748028.jpg","1750155.jpg"],
+            imglist:[],
             more:"养宠知识",
             more1:"铲屎官热议",
             more2:"它嗅故事",
@@ -87,6 +88,16 @@ export default {
             ]
         }
 
+    },
+    created(){
+        axios.get("community/sybanner").then(result=>{
+            console.log("result",result);
+            if(result.data.code==1){
+                this.imglist = result.data.data;
+            }
+        }).catch(err=>{
+        console.log(err);
+      })
     },
     components:{
         "pageheader":Pageheader,
