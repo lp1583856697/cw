@@ -3,10 +3,10 @@
       <ul>
           <li v-for="(item,i) of cardlist" :key="i">
               <router-link to="">
-                   <img :src="require('../../assets/images/'+cardlist[i].pic)" class="dogImg">
-                    <span class="title">{{cardlist[i].title}}</span>
-                    <span class="pageviews">{{cardlist[i].pageviews}} 浏览量</span>
-                    <span class="likecount">{{cardlist[i].likecount}} 有用</span>
+                   <img :src="'http://127.0.0.1:4006/'+item.pic" class="dogImg">
+                    <span class="title">{{item.title}}</span>
+                    <span class="pageviews">{{item.pageviews}} 浏览量</span>
+                    <span class="likecount">{{item.likecount}} 有用</span>
               </router-link>
           </li>
       </ul>

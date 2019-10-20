@@ -26,7 +26,7 @@ INSERT INTO CW_user_login VALUES
   ),
   (Null,'13112345675','123456','img/avatar/default.png','0'
   );
--- 商城专区表
+/****商城专区表****/
 CREATE TABLE cw_zhuan(
 zid INT PRIMARY KEY AUTO_INCREMENT,
 zname VARCHAR(8),
@@ -41,13 +41,39 @@ INSERT INTO cw_zhuan VALUES(null,"窝具","01.jpg");
 INSERT INTO cw_zhuan VALUES(null,"服饰","01.jpg");
 INSERT INTO cw_zhuan VALUES(null,"玩具","01.jpg");
 
-#首页轮播图
-CREATE TABLE sy_banner(
-    bid INT PRIMARY KEY AUTO_INCREMENT,
-    imgurl VARCHAR(32)
+/****首页轮播图****/
+CREATE TABLE cw_index_carousel(
+    cid INT PRIMARY KEY AUTO_INCREMENT,
+    imgurl VARCHAR(128),
+    href VARCHAR(128)
 );
-INSERT INTO sy_banner (bid,imgurl) VALUES
-(null,"sy_banner/1746014.jpg"),
-(null,"sy_banner/1747083.jpg"),
-(null,"sy_banner/1748028.jpg"),
-(null,"sy_banner/1750155.jpg")
+INSERT INTO cw_index_carousel VALUES
+(null,'sy_banner/1746014.jpg',''),
+(null,'sy_banner/1747083.jpg',''),
+(null,'sy_banner/1748028.jpg',''),
+(null,'sy_banner/1750155.jpg','');
+
+/****首页养宠知识列表****/
+CREATE TABLE cw_index_knowledgelist(
+  kid INT PRIMARY KEY AUTO_INCREMENT,
+  pic VARCHAR(128),
+  title VARCHAR(128),         
+  pageviews INT,
+  likecount INT
+);
+INSERT INTO cw_index_knowledgelist VALUES
+(NULL,'sy_banner/1746014.jpg','如何保护狗狗的牙齿',153,10),
+(NULL,'sy_banner/1746014.jpg','泰迪的造型能维持多久',129,66),
+(NULL,'sy_banner/1746014.jpg','狗狗抗拒梳毛怎么办',77,2);
+
+/****首页铲屎官热议****/
+CREATE TABLE cw_index_comment(
+  com_id INT PRIMARY KEY AUTO_INCREMENT,
+  question VARCHAR(128),
+  comment VARCHAR(128),         
+  commentcount INT
+);
+INSERT INTO cw_index_comment VALUES
+(NULL,'两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗','会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院',2),
+(NULL,'两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗','会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院',3),
+(NULL,'两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗','会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院',5);

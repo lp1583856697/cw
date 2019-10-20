@@ -4,14 +4,14 @@
             <router-link to="">          
                 <div class="question">
                     <van-tag type="primary">问</van-tag>
-                    <span>{{commentlist[i].question}}</span>
+                    <span>{{item.question}}</span>
                 </div>
                 <div class="comment">
                     <van-tag type="primary">神评</van-tag>
-                    <span>{{commentlist[i].comment}}</span>
+                    <span>{{item.comment}}</span>
                 </div>
                 <div class="allcomment">
-                    <span>查看全部{{commentlist[i].count}}个回答</span>
+                    <span>查看全部{{item.count}}个回答</span>
                     <van-icon name="arrow" />
                 </div> 
             </router-link>

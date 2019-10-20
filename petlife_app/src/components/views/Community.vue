@@ -27,47 +27,28 @@ export default {
             more:"养宠知识",
             more1:"铲屎官热议",
             more2:"它嗅故事",
-            cardlist:[
-                {
-                    pic:"1746014.jpg",
-                    title:"如何保护狗狗的牙齿",
-                    pageviews:"153",
-                    likecount:"10"
-                },
-                {
-                    pic:"1746014.jpg",
-                    title:"泰迪的造型能维持多久",
-                    pageviews:"129",
-                    likecount:"66"
-                },
-                {
-                    pic:"1746014.jpg",
-                    title:"狗狗抗拒梳毛怎么办",
-                    pageviews:"77",
-                    likecount:"2"
-                }
-            ],
+            cardlist:[],
             commentlist:[
-                {
-                    question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
-                    comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
-                    count:1
-                },
-                {
-                    question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
-                    comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
-                    count:1
-                },
-                {
-                    question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
-                    comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
-                    count:1
-                },
-                {
-                    question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
-                    comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
-                    count:3
-                }
+                // {
+                //     question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
+                //     comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
+                //     count:1
+                // },
+                // {
+                //     question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
+                //     comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
+                //     count:1
+                // },
+                // {
+                //     question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
+                //     comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
+                //     count:1
+                // },
+                // {
+                //     question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
+                //     comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
+                //     count:3
+                // }
             ],
             storylist:[
                 {
@@ -90,14 +71,33 @@ export default {
 
     },
     created(){
+        //轮播图数据请求
         axios.get("community/sybanner").then(result=>{
-            console.log("result",result);
+            // console.log("result",result);
             if(result.data.code==1){
                 this.imglist = result.data.data;
             }
         }).catch(err=>{
         console.log(err);
-      })
+      });
+        //养宠知识列表数据请求
+        var url = "community/knowledgelist";
+        var obj = {pno:1,psize:3};
+        axios.get(url,{params:obj}).then(result=>{
+            // console.log("result",result);
+            this.cardlist = result.data.data;
+        }).catch(err=>{
+            console.log(err);
+        });
+        //铲屎官热议
+        var url = "community/commentlist";
+        var obj = {pno:1,psize:4};
+        axios.get(url,{params:obj}).then(result=>{
+            // console.log(result);
+            this.commentlist = result.data.data;
+        }).catch(err=>{
+            console.log(err);
+        })
     },
     components:{
         "pageheader":Pageheader,
