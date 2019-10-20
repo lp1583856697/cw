@@ -1,6 +1,6 @@
 <template>
   <div class="container" >
-    <div class="item" v-for="(item,i) of list" :key="i">
+    <div class="item" v-for="(item,i) of list" :key="i" @touchstart="showDeleteButton(i)" @touchend="clearend(i)">
       <!-- 商品复选框-->
       <div class="checkbox">
         <van-checkbox @change="itemSelect" v-model="item.checked" checked-color="#ddd"></van-checkbox>
@@ -57,7 +57,24 @@ export default {
       }else{
         this.checkedAll=false;
       }
-      
+    },
+    //长按删除功能
+    showDeleteButton(i){
+      console.log(i)
+        clearInterval(this.Loop); //再次清空定时器，防止重复注册定时器
+        this.Loop = setTimeout(function() {
+          this.$messagebox.confirm("确定删除该商品").then(() => {
+            // console.log("删除")
+            this.list.splice(i, 1);
+          }).catch(() => {
+            // on cancel
+            // console.log("不删")
+          });
+        }.bind(this), 2000);
+    },
+    clearend(i) {
+     // 这个方法主要是用来将每次手指移出之后将计时器清零
+     clearInterval(this.Loop);
     }
   }
 }
@@ -115,6 +132,13 @@ export default {
   border-radius: 8px;
   background: #f9f7f9;
   margin:-8px 5px 5px 0;
+}
+/* 确定框的样式 */
+.element.style {
+  background:darkorange;
+}
+.mint-msgbox .mint-msgbox-confirm{
+  color:white;
 }
 
 </style>
