@@ -28,47 +28,9 @@ export default {
             more1:"铲屎官热议",
             more2:"它嗅故事",
             cardlist:[],
-            commentlist:[
-                // {
-                //     question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
-                //     comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
-                //     count:1
-                // },
-                // {
-                //     question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
-                //     comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
-                //     count:1
-                // },
-                // {
-                //     question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
-                //     comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
-                //     count:1
-                // },
-                // {
-                //     question:"两个月左右的阿拉还没换牙，发现牙齿有天包地的情况，这个长大会严重吗",
-                //     comment:"会严重，小时候矫正治疗，买一些好一点的钙片和磨牙棒，情况得不到改善要去医院",
-                //     count:3
-                // }
-            ],
-            storylist:[
-                {
-                    pic:"12.jpg",
-                    title:"搭建用户桥梁倾听宠物新生",
-                    text:"家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫'灰灰'的狗狗狗狗"
-                },
-                 {
-                    pic:"12.jpg",
-                    title:"搭建用户桥梁倾听宠物新生",
-                    text:"家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫'灰灰'的狗狗狗狗"
-                },
-                 {
-                    pic:"12.jpg",
-                    title:"搭建用户桥梁倾听宠物新生",
-                    text:"家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫'灰灰'的狗狗狗狗"
-                }
-            ]
+            commentlist:[],
+            storylist:[]
         }
-
     },
     created(){
         //轮播图数据请求
@@ -95,6 +57,15 @@ export default {
         axios.get(url,{params:obj}).then(result=>{
             // console.log(result);
             this.commentlist = result.data.data;
+        }).catch(err=>{
+            console.log(err);
+        })
+        //它嗅故事
+        var url = "community/storylist";
+        var obj = {pno:1,psize:3};
+        axios.get(url,{params:obj}).then(result=>{
+            console.log(result);
+            this.storylist = result.data.data;
         }).catch(err=>{
             console.log(err);
         })

@@ -3,10 +3,10 @@
         <ul class="alllist">
             <li v-for="(item,i) of storylist" :key="i">
                 <router-link to="">
-                    <img :src="require('../../assets/images/'+storylist[i].pic)" class="Image"> 
+                    <img :src="'http://127.0.0.1:4006/'+item.pic" class="Image"> 
                     <ul class="alltext">
-                        <li class="title">{{storylist[i].title}}</li>
-                        <li class="text">{{storylist[i].text}}</li>
+                        <li class="title">{{item.title}}</li>
+                        <li class="text">{{item.text}}</li>
                     </ul>
                 </router-link>
                 <van-divider />

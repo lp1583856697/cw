@@ -56,8 +56,11 @@ export default {
         console.log(res.data.code);
         if(res.data.code<0){
           //6.登录失败提示消息
+          sessionStorage.setItem("isLogin",false);
           this.$router.push("/Myreg");
         }else{
+          // sessionStorage里面第二个参数保存之后都会变成字符串""
+          sessionStorage.setItem("isLogin",true);
           //跳转Me组件
           this.$router.push("/Me");
         }

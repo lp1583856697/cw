@@ -1,5 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+// 禁止全局路由错误处理打印，这个也是vue-router开发者给出的解决方案：
+// https://www.cnblogs.com/rever/p/11577322.html
+const originalPush = Router.prototype.push;
+Router.prototype.push = function push(location, onResolve, onReject) {
+  if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject)
+  return originalPush.call(this, location).catch(err => err)
+};
+
 //1.功能:引入组件XXX.vue
 //将vue文件引入当前router下的index.js
 import Cart from '../components/views/Cart.vue'

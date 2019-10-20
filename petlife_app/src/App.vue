@@ -2,14 +2,15 @@
   <div id="app">
     <router-view/>
       <!--3:底部导航条 start-->
-      <van-divider />
-      <mt-tabbar fixed >
-        <mt-tab-item id="tab[i]" @click.native="changeState(i)" v-for="(item,i) of tablist" :key="i">
-          <img :src="require('./assets/'+tablist[i].pic)"/>
-          <!-- :normalImage="require('./assets/community-ed.png')" -->
-          <div><router-link :to="item.path">{{tablist[i].title}}</router-link></div>
-        </mt-tab-item>
-      </mt-tabbar>
+      <div v-if="this.$route.path!='/Login1'">
+        <van-divider />
+        <mt-tabbar v-model="selected" fixed>
+          <mt-tab-item :id="item.id" v-for="(item,i) of tablist" :key="i">
+            <img :src="require('./assets/'+tablist[i].pic)"/>
+            <div>{{item.title}}</div>
+          </mt-tab-item>
+        </mt-tabbar>
+      </div>
       <!--3:底部导航条 end-->
   </div>
 </template>
@@ -18,39 +19,60 @@
 export default {
   name: 'App',
   data(){
+    console.log("this.$route.path", this.$route.path)
     return {
+      // 如果this.$route.path为community或shopping...其中一个,则this.$route.path.substring(1)都为true,选中当前为true的id。如果this.$route.path为"/",则this.$route.path.substring(1)为false,执行第二个条件语句,选中community
+      selected:this.$route.path.substring(1) || "community",
       tablist:[
         {
           pic:"community.png",
           title:"社区",
-          path:"/community"
+          id:"community"
         },
         {
           pic:"community.png",
           title:"商城",
-          path:"/shopping"
+          id:"shopping"
         },
         {
           pic:"community.png",
           title:"它秀",
-          path:"/shopping"
+          id:""
         },
         {
           pic:"community.png",
           title:"购物车",
-          path:"/cart"
+          id:"cart"
         },
         {
           pic:"community.png",
           title:"我的",
-          path:"/Me"
+          id:"Me"
         }
       ]
     }
   },
-  methods: {
-    changeState(index){
-      console.log("index:", index)
+  created(){
+    // this.selected=this.$route.path.substring(1);
+  },
+  watch: {
+    selected:function(val,oldVal){
+      // 这里就可以通过 val 的值变更来确定去向
+      console.log("点了");
+      switch (val){
+        case "community":
+        case "shopping":
+          this.$router.push("/"+val);
+          break;
+        case "cart":
+        case "Me":
+          if(sessionStorage.isLogin=="true"){
+            this.$router.push("/"+val);
+          }else{
+            this.$router.push("/Login1");
+          }
+          break;
+      }
     }
   }
 }

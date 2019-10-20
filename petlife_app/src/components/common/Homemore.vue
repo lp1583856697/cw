@@ -15,7 +15,8 @@
 <script>
 export default {
     props:{
-        more:{default:""}
+        more:{default:""},
+        getMorelist:{ default:()=>{} }
     }
 }
 </script>

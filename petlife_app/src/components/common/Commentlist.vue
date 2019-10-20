@@ -11,7 +11,7 @@
                     <span>{{item.comment}}</span>
                 </div>
                 <div class="allcomment">
-                    <span>查看全部{{item.count}}个回答</span>
+                    <span>查看全部{{item.commentcount}}个回答</span>
                     <van-icon name="arrow" />
                 </div> 
             </router-link>

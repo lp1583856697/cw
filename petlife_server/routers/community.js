@@ -53,4 +53,25 @@ router.get("/commentlist",(req,res)=>{
   });
 })
 
+
+//它嗅故事
+router.get("/storylist",(req,res)=>{
+  var pno=parseInt(req.query.pno);
+  var psize = parseInt(req.query.psize);
+  var start = (pno-1)*psize;
+  console.log("pno",pno);
+  console.log("psize",psize);
+  console.log("start",start);
+  var sql = "SELECT * FROM cw_index_storylist LIMIT ?,?";
+  pool.query(sql,[start,psize],(err,result)=>{
+    if(err) throw err;
+    if(result.length>0){
+      res.send({code:1,msg:"获取成功",data:result});
+    }else{
+      res.send({code:-1,msg:"获取失败"});
+    }
+  });
+})
+
+
 module.exports=router;
