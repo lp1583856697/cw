@@ -23,22 +23,22 @@ Vue.use(Vant)
 
 Vue.config.productionTip = false
 
-//引入Tab标签页
-import { Tab, Tabs } from 'vant';
-Vue.use(Tab).use(Tabs);
-// Grid 宫格
-import { Grid, GridItem } from 'vant';
-Vue.use(Grid).use(GridItem);
-//搜索框
-import { Search } from 'vant';
-Vue.use(Search);
-//轮播图
-import { Swipe, SwipeItem } from 'vant';
-Vue.use(Swipe).use(SwipeItem);
-Vue.config.productionTip = false
-//Icon图片
-import { Icon } from 'vant';
-Vue.use(Icon);
+// //引入Tab标签页
+// import { Tab, Tabs } from 'vant';
+// Vue.use(Tab).use(Tabs);
+// // Grid 宫格
+// import { Grid, GridItem } from 'vant';
+// Vue.use(Grid).use(GridItem);
+// //搜索框
+// import { Search } from 'vant';
+// Vue.use(Search);
+// //轮播图
+// import { Swipe, SwipeItem } from 'vant';
+// Vue.use(Swipe).use(SwipeItem);
+// Vue.config.productionTip = false
+// //Icon图片
+// import { Icon } from 'vant';
+// Vue.use(Icon);
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
