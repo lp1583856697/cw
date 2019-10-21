@@ -31,7 +31,9 @@ export default {
     }
   },
   methods:{
-    reg(){}
+    reg(){
+      
+    }
   }
 }
 </script>
