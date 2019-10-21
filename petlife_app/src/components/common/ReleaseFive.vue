@@ -1,7 +1,7 @@
 <template>
         <!--搜索框的子组件-->
 <div class="d1">
-<van-search placeholder="请输入搜索关键词" v-model="value" />
+<van-search placeholder="请输入搜索关键词"/>
     <span>
     <router-link to="/Release">取消</router-link>
     </span>
