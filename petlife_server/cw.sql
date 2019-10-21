@@ -10,21 +10,23 @@ USE cw;
 CREATE TABLE CW_user_login(
   uid INT PRIMARY KEY AUTO_INCREMENT,
   phone VARCHAR(16),
+  sms VARCHAR(16),
   upwd VARCHAR(32),
+  ic VARCHAR(16),
   avatar VARCHAR(128),        /*头像图片路径*/
   gender INT                  /*性别  0-女  1-男*/
 );
 /*****************用户信息:数据*********************/
 INSERT INTO CW_user_login VALUES
-  (Null,'13112345671','web123456','img/avatar/default.png','0'
+  (Null,'13112345671','1234','web123456','web123456','img/avatar/default.png','0'
   ),
-  (Null,'13112345672','web123456','img/avatar/default.png','1'
+  (Null,'13112345672','1234','web123456','web123456','img/avatar/default.png','1'
   ),
-  (Null,'13112345673','web123456','img/avatar/default.png','1'
+  (Null,'13112345673','1234','web123456','web123456','img/avatar/default.png','1'
   ),
-  (Null,'13112345674','web123456','img/avatar/default.png','0'
+  (Null,'13112345674','1234','web123456','web123456','img/avatar/default.png','0'
   ),
-  (Null,'13112345675','123456','img/avatar/default.png','0'
+  (Null,'13112345675','1234','web123456','web123456','img/avatar/default.png','0'
   );
 /****商城专区表****/
 CREATE TABLE cw_zhuan(

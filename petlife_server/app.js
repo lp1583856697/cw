@@ -88,3 +88,33 @@ server.get("/login1",(req,res)=>{
 //打开浏览器在地址栏输入按回
 //   http://127.0.0.1:4006/login1?phone=13112345671&upwd=web123456
 //   http://127.0.0.1:4006/login1?phone=13112345671&upwd=web123452 
+
+//3.功能三:完成用户登录
+server.get("/Myreg",(req,res)=>{
+  //(1)获取脚手架参数 phone upwd
+  var phone = req.query.phone;
+  var sms=req.query.sms;
+  var upwd = req.query.upwd;
+  var ic=req.query.ic;
+  //(2)创建sql语句查询
+  var sql = "SELECT uid FROM CW_user_login WHERE phone = ? AND sms=? AND upwd =? AND ic =?";
+  //(3)执行sql语句
+  pool.query(sql,[phone,sms,upwd,ic],(err,result)=>{
+  if(err)throw err;
+  //(4)获取执行结果
+  //(5)判断查询是否成功 result.length
+  
+  if(result.length==0){
+    res.send({code:-1,msg:"注册信息有误,请重新输入"})
+  }else{
+    //5.1 保存用户id在session对象中
+    //result数据格式[{uid:1}]
+    req.session.user_id=result[0].uid;
+    res.send({code:1,msg:"注册成功"})
+  }
+  //(6)将结果返回脚手架
+  })
+})
+//打开浏览器在地址栏输入按回
+//   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
+//   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
