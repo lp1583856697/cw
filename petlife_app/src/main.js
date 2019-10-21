@@ -27,7 +27,7 @@ Vue.config.productionTip = false
 import { Tab, Tabs } from 'vant';
 Vue.use(Tab).use(Tabs);
 
-import Vant from "vant"
+import vant from "vant"
 import "vant/lib/index.css"
 Vue.use(Vant)
 // Grid 宫格
