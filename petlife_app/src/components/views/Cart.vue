@@ -19,7 +19,7 @@ export default {
   components:{
     "carttop":Carttop,
     "cartcard":CartCard,
-    "cartitem":CartItem
+    "cartitem":CartItem  
   }
 }
 </script>
