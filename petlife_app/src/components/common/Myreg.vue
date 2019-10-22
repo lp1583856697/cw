@@ -65,7 +65,7 @@ export default {
       ).then(res=>{
         console.log(res.data.code);
         if(res.data.code<0){
-          //6.登录失败提示消息
+          //6.注册失败提示消息
           sessionStorage.setItem("isReg",false);
           this.$router.push("/Myreg");
         }else{
