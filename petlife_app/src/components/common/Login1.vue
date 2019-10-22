@@ -57,7 +57,7 @@ export default {
         if(res.data.code<0){
           //6.登录失败提示消息
           sessionStorage.setItem("isLogin",false);
-          this.$router.push("/Login1");
+          this.$messagebox("消息","手机号或密码输入有误,无账号请注册!");;
         }else{
           // sessionStorage里面第二个参数保存之后都会变成字符串""
           sessionStorage.setItem("isLogin",true);
