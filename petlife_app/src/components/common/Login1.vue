@@ -61,8 +61,8 @@ export default {
         }else{
           // sessionStorage里面第二个参数保存之后都会变成字符串""
           sessionStorage.setItem("isLogin",true);
-          //跳转Me组件
-          this.$router.push("/Me");
+          //跳转/组件
+          this.$router.push("/");
         }
       })
     },

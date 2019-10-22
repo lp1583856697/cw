@@ -58,7 +58,7 @@ export default {
   watch: {
     selected:function(val,oldVal){
       // 这里就可以通过 val 的值变更来确定去向
-      console.log("点了");
+      // console.log("点了");
       switch (val){
         case "community":
         case "shopping":
