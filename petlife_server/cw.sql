@@ -91,3 +91,17 @@ INSERT INTO cw_index_storylist VALUES
 (NULL,'sy_banner/1746014.jpg','搭建用户桥梁倾听宠物新生','家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫灰灰的狗狗狗狗'),
 (NULL,'sy_banner/1746014.jpg','搭建用户桥梁倾听宠物新生','家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫灰灰的狗狗狗狗'),
 (NULL,'sy_banner/1746014.jpg','搭建用户桥梁倾听宠物新生','家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫灰灰的狗狗狗狗');
+
+/******购物车卡片*******/
+use cw;
+CREATE TABLE cw_cart_item(
+  uid INT PRIMARY KEY AUTO_INCREMENT,
+  cid INT,
+  title VARCHAR(255),
+  subtitle VARCHAR(128),
+  count INT,
+  pic VARCHAR(128),
+  price DECIMAL(10,2)
+);
+INSERT INTO cw_cart_item VALUES 
+(NULL,1,"【luscious/路斯】猫用小鱼干50g*3盒","公鱼原味,50g*3盒",1,"images/goods.jpg",46.9)
