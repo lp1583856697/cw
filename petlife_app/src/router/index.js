@@ -18,6 +18,7 @@ import Shopping from "../components/common/Shopping.vue"
 import Login1 from "../components/common/Login1.vue"
 import CartItem from '../components/common/CartItem.vue'
 import Myreg from "../components/common/Myreg.vue"
+import Myset from "../components/common/Myset.vue"
 import Release from "../components/views/Release.vue"
 import ReleaseTwo from "../components/common/ReleaseTwo.vue"
 import ReleaseThree from "../components/common/ReleaseThree.vue"
@@ -36,6 +37,7 @@ export default new Router({
     {path:"/ReleaseThree",component:ReleaseThree},
     {path:"/ReleaseFour",component:ReleaseFour},
     {path:"/Release",component:Release},
+    {path:"/Myset",component:Myset},
     {path:"/Myreg",component:Myreg},
     {path:"/Login1",component:Login1},
     {path:"/Login",component:Login},
