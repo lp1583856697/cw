@@ -72,7 +72,7 @@ export default {
           // sessionStorage里面第二个参数保存之后都会变成字符串""
           sessionStorage.setItem("isReg",true);
           this.$messagebox("消息","注册成功，请登录！");
-          //跳转Me组件
+          //跳转登录组件
           this.$router.push("/Login1");
         }
       })
