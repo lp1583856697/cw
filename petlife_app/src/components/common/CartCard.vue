@@ -34,6 +34,7 @@
 export default {
   data(){
     return{
+      checkedAll:false,
       list:[
         {title:"【Pure&Natural/伯纳天纯】伯纳天纯猫粮6.8kg*2袋",pic:"06.jpg",price:598,sale:0},
         {title:"【Hoopet/华元宠具】hoopet猫头猫砂垫米猫用品",pic:"03.jpg",price:46.9,sale:0},
@@ -47,7 +48,7 @@ export default {
     }
   },
   methods:{
-    //5.1找到全选按钮的状态
+    //1找到全选按钮的状态
       selectAll(event){
         //获取当前参数
         //2.获取当前全选按钮的状态
@@ -126,4 +127,10 @@ export default {
   .van-submit-bar {
     bottom: 46px;
   }
+  /* .van-checkbox__icon .van-checkbox__icon--round .van-checkbox__icon--checked{
+    color: #ccc;
+    background-color: white;
+    border-color: #ccc
+  } */
+ 
 </style>
