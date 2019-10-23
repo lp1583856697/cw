@@ -5,6 +5,7 @@
     <div class="d2">
         <div>修改登录密码</div>
         <div>
+          <img src="../../assets/gm.png" alt="">
           <van-icon name="arrow" />
         </div>
     </div>
@@ -18,8 +19,11 @@
     <van-divider />
     <div class="d2">
         <div>客服电话</div>
-        <div>
-          <van-icon name="arrow" />
+        <div class="d3">
+          <div>
+            <img src="../../assets/kf.png" alt="">
+          </div>
+          <span class="s1">19906815936</span>
         </div>
     </div>
     <van-divider />
@@ -32,8 +36,8 @@
     <van-divider />
     <div class="d2">
         <div>清除缓存</div>
-        <div>
-          <van-icon name="arrow" />
+        <div style="color:#aaa;font-size:14px;">
+          1.60MB
         </div>
     </div>
     <van-divider />
@@ -86,6 +90,17 @@ export default {
     position: fixed;
     top:40px;
     left:20px;
+  }
+  .d3{
+    display: flex;
+    justify-content: space-between;
+  }
+  .s1{
+    font-size: 14px;
+    letter-spacing: 0;
+    padding-left: 5px;
+    color: #FD8D65;
+    font-weight: normal;
   }
   .van-button{
     margin-top: 100px;
