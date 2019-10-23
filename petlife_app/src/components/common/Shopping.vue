@@ -24,8 +24,8 @@
       <van-swipe-item><img src="../../assets/images/1748028.jpg" /></van-swipe-item>
       <van-swipe-item><img src="../../assets/images/1749533.jpg" /></van-swipe-item>
       <div class="custom-indicator" slot="indicator" id="pos">
-        <van-icon name="circle" />
-        <van-icon name="like" />
+        <!-- <van-icon name="circle" />
+        <van-icon name="like" /> -->
       </div>
     </van-swipe>
     <!-- 卡片 -->
@@ -44,41 +44,36 @@
           <li><img src="../../assets/img6.jpg" alt="">积分兑换</li>
         </ul>
         <!-- 正品图 -->
-        <img src="../../assets/images/1749533.jpg" alt="">
+        <img src="../../assets/vip.jpg" alt="">
       </div>
       <!-- 图一 -->
-      <img src="../../assets/images/1749533.jpg" alt="">
+      <img src="../../assets/images/12.jpg" alt="">
       <!-- 图二 -->
-      <img src="../../assets/images/1749533.jpg" alt="">
+      <img src="../../assets/images/10.png" alt="">
     </div>
     <!-- 秒杀 -->
     <div class="miao">
       <h4>今日秒杀</h4>
       <div class="miao_shop">
         <ul>
-          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
-          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
-          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
-          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
-          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
-          <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>打折价格</div><span>原来价格</span></li>
+          <li><img src="../../assets/images/05.jpg" alt=""><p>宠物粮食</p><div style="color:red;font-size:20px">N ¥20.00</div><span>¥30.00</span></li>
+          <li><img src="../../assets/images/05.jpg" alt=""><p>宠物粮食</p><div style="color:red;font-size:20px">N ¥20.00</div><span>¥30.00</span></li>
+          <li><img src="../../assets/images/05.jpg" alt=""><p>宠物粮食</p><div style="color:red;font-size:20px">N ¥20.00</div><span>¥30.00</span></li>
+          <li><img src="../../assets/images/05.jpg" alt=""><p>宠物粮食</p><div style="color:red;font-size:20px">N ¥20.00</div><span>¥30.00</span></li>
+          <li><img src="../../assets/images/05.jpg" alt=""><p>宠物粮食</p><div style="color:red;font-size:20px">N ¥20.00</div><span>¥30.00</span></li>
+          <li><img src="../../assets/images/05.jpg" alt=""><p>宠物粮食</p><div style="color:red;font-size:20px">N ¥20.00</div><span>¥30.00</span></li>
         </ul>
       </div>
     </div>
     <!-- 各种专区 -->
     <div class="zhuan">
       <div class="zhuan_l" v-for="(item,i) of list1" :key="i">
-        <h4>{{item.zname}}专区</h4>
+        <h4 @click="loadZ" :data-zid="item.zid">{{item.zname}}专区</h4>
         <div class="zhuan_shop">
           <img :src="`http://127.0.0.1:4006/${item.img_zhuan}`" alt="">
           <div class="uu">
-            <ul>
-              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
-              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
-              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
-              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
-              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
-              <li><img src="../../assets/car.png" alt=""><p>标题介绍</p><div>价格</div></li>
+            <ul >
+              <li v-for="(item,i) of list2" :key="i"><img :src="`http://127.0.0.1:4006/${item.img_zs}`" alt=""><p>{{item.zsname}}</p><div>价格</div></li>
             </ul>
           </div>
         </div>
@@ -92,7 +87,8 @@ var nav1=document.getElementById("nav1");
 export default {
   data(){
     return {
-      list1:[]
+      list1:[],
+      list2:[]
     }
   },
   created(){
@@ -103,11 +99,20 @@ export default {
     })
   },
   methods:{
-
+    loadZ(event){
+      var zid=event.target.dataset.zid;
+      axios.get("shop_zhuan_s",{params:{zid:zid}}).then(result=>{
+        console.log(result.data.data)
+        this.list2=result.data.data;
+      })
+    }
   }
 }
 </script>
 <style scoped>
+#shopp{
+  background:#F8F6F8;
+}
 /* 顶部导航样式 */
 .top_nav{
   width:100%;
@@ -159,7 +164,9 @@ export default {
 .active{
   color: #000;
 }
-
+.noactive{
+  color:#fff;
+}
 /* 轮播图 */
 .van-swipe-item img{
   width: 100%;
@@ -179,7 +186,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin-top:-4px;
-  background: #eee;
+  /* background: #eee; */
 }
 .card>img{
   width: 85%;
@@ -236,6 +243,9 @@ export default {
   width: 600px;
   list-style-type: none;
 }
+.miao_shop>ul>li>img{
+  width:80px;
+}
 .miao_shop::-webkit-scrollbar {display:none} 
 /* 专区样式 */
 .zhuan{
@@ -266,5 +276,9 @@ export default {
   width: 600px;
   justify-content: space-around;
   margin-bottom: 5px;
+  margin-top:10px;
+}
+.uu ul li img{
+  width:80px;
 }
 </style>
