@@ -52,7 +52,7 @@ export default {
         this.$messagebox("消息","密码输入有误,请再次确认!");
         return;
       }
-      if(ireg.test(i)==true&&ireg.test(i)==""){
+      if(ireg.test(i)==true||ireg.test(i)==""){
         return;
       }
       //4.发送ajax请求
