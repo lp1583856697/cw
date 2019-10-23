@@ -5,7 +5,7 @@
         <van-divider :style="{ color: 'black', borderColor: '#ccc', padding: '0 16px' }">
           <img :src="require('../../assets/like.png')" alt="">
           猜你喜欢
-        </van-divider>
+        </van-divider>  
     </div>
     <!-- 下面的商品推荐 -->
     <div class="recommend">
@@ -26,7 +26,7 @@
       :price="0.00"
       button-text="结算(0)"
       @submit="onSubmit">
-      <van-checkbox v-model="checkedAll">全选</van-checkbox>
+      <van-checkbox v-model="checkedAll" @change="selectAll">全选</van-checkbox>
     </van-submit-bar>
   </div>
 </template>
@@ -45,6 +45,15 @@ export default {
         {title:"【Hoopet/华元宠具】hoopet猫头猫砂垫米猫用品",pic:"05.jpg",price:46.9,sale:0}
       ]
     }
+  },
+  methods:{
+    //5.1找到全选按钮的状态
+      selectAll(event){
+        //获取当前参数
+        //2.获取当前全选按钮的状态
+        var all=event.target.checked;
+        console.log(all)
+      }
   }
 }
 </script>

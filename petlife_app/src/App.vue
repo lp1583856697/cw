@@ -2,7 +2,7 @@
   <div id="app">
     <router-view/>
       <!--3:底部导航条 start-->
-      <div v-if="this.$route.path!='/Login1'">
+      <div v-if="hideArr.indexOf($route.path) === -1">
         <van-divider />
         <mt-tabbar v-model="selected" fixed>
           <mt-tab-item :id="item.id" v-for="(item,i) of tablist" :key="i">
@@ -19,9 +19,10 @@
 export default {
   name: 'App',
   data(){
-    console.log("this.$route.path", this.$route.path)
+    // console.log("this.$route.path", this.$route.path)
     return {
       // 如果this.$route.path为community或shopping...其中一个,则this.$route.path.substring(1)都为true,选中当前为true的id。如果this.$route.path为"/",则this.$route.path.substring(1)为false,执行第二个条件语句,选中community
+      hideArr: ["/Login", "/Login1", "/Details", "/login", "/login1", "/details"],
       selected:this.$route.path.substring(1) || "community",
       tablist:[
         {
@@ -37,7 +38,7 @@ export default {
         {
           pic:"community.png",
           title:"它秀",
-          id:""
+          id:"Release"
         },
         {
           pic:"community.png",
@@ -53,15 +54,16 @@ export default {
     }
   },
   created(){
-    // this.selected=this.$route.path.substring(1);
+    
   },
   watch: {
     selected:function(val,oldVal){
       // 这里就可以通过 val 的值变更来确定去向
-      console.log("点了");
+      // console.log("点了");
       switch (val){
         case "community":
         case "shopping":
+        case "Release":
           this.$router.push("/"+val);
           break;
         case "cart":
@@ -69,7 +71,10 @@ export default {
           if(sessionStorage.isLogin=="true"){
             this.$router.push("/"+val);
           }else{
-            this.$router.push("/Login1");
+            this.$router.push({
+              path: "/Login1",
+              query: {oldPath : "/"+val } 
+            });
           }
           break;
       }

@@ -18,12 +18,14 @@ import Shopping from "../components/common/Shopping.vue"
 import Login1 from "../components/common/Login1.vue"
 import CartItem from '../components/common/CartItem.vue'
 import Myreg from "../components/common/Myreg.vue"
+import Myset from "../components/common/Myset.vue"
 import Release from "../components/views/Release.vue"
 import ReleaseTwo from "../components/common/ReleaseTwo.vue"
 import ReleaseThree from "../components/common/ReleaseThree.vue"
 import ReleaseFour from "../components/common/ReleaseFour.vue"
 import ReleaseFive from "../components/common/ReleaseFive.vue"
 import ReleaseOne from "../components/common/ReleaseOne.vue"
+import Details from "../components/views/Details.vue"
 
 //2.为组件指定访问路径
 Vue.use(Router)
@@ -35,6 +37,7 @@ export default new Router({
     {path:"/ReleaseThree",component:ReleaseThree},
     {path:"/ReleaseFour",component:ReleaseFour},
     {path:"/Release",component:Release},
+    {path:"/Myset",component:Myset},
     {path:"/Myreg",component:Myreg},
     {path:"/Login1",component:Login1},
     {path:"/Login",component:Login},
@@ -43,6 +46,7 @@ export default new Router({
     {path:"/cart",component:Cart},
     {path:"/community",component:Community},
     {path:"/",component:Community},
-    {path:"/cartitem",component:CartItem}
+    {path:"/cartitem",component:CartItem},
+    {path:"/Details",component:Details}
   ]
 })

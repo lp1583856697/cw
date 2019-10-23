@@ -34,8 +34,8 @@ export default {
     reg(){
       var p=this.phone;
       var preg=/^1[3-9]\d{9}$/;
-      var s=this.sms;
-      var sreg=/^\d{4}$/;
+      // var s=this.sms;
+      // var sreg=/^\d{4}$/;
       var u=this.upwd;
       var ureg=/^\w{6,18}$/;
       var i=this.ic;
@@ -44,20 +44,20 @@ export default {
         this.$messagebox("消息","手机号输入有误,请再次确认!");
         return;
       }
-      if(sreg.test(s)==false){
-        this.$messagebox("消息","验证码输入有误,请再次确认!");
-        return;
-      }
+      // if(sreg.test(s)==false){
+      //   this.$messagebox("消息","验证码输入有误,请再次确认!");
+      //   return;
+      // }
       if(ureg.test(u)==false){
         this.$messagebox("消息","密码输入有误,请再次确认!");
         return;
       }
-      if(ireg.test(i)==true&&ireg.test(i)==""){
+      if(ireg.test(i)==true||ireg.test(i)==""){
         return;
       }
       //4.发送ajax请求
       var url="Myreg";
-      var obj={phone:p,sms:s,upwd:u,ic:i};
+      var obj={phone:p,upwd:u,ic:i};
       //5.获取服务器返回结果
       this.axios.get(
         url,
@@ -65,13 +65,14 @@ export default {
       ).then(res=>{
         console.log(res.data.code);
         if(res.data.code<0){
-          //6.登录失败提示消息
+          //6.注册失败提示消息
           sessionStorage.setItem("isReg",false);
           this.$router.push("/Myreg");
         }else{
           // sessionStorage里面第二个参数保存之后都会变成字符串""
           sessionStorage.setItem("isReg",true);
-          //跳转Me组件
+          this.$messagebox("消息","注册成功，请登录！");
+          //跳转登录组件
           this.$router.push("/Login1");
         }
       })
