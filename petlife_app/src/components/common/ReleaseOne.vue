@@ -46,7 +46,7 @@
 <style scoped>
 .d1{width:370px;height:200px;}
 .d6{bottom:-3px;left:100px;}
-.a3 .a1{
+img{
     width:23rem;
 }
 </style>
