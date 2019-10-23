@@ -4,7 +4,7 @@
       <!-- 商品复选框-->
       <div class="checkbox">
         <van-checkbox @change="itemSelect" v-model="item.checked" checked-color="#ddd"></van-checkbox>
-      </div>
+      </div>  
       <!-- 图片 -->
       <img :src="require('../../assets/images/'+list[i].pic+'.jpg')" alt="">
       <!-- 右侧文字 -->
@@ -52,12 +52,14 @@ export default {
       // console.log(sum);
       // console.log(this.list.length)
       //5.如果选中的数量与数组相同，将全选按钮的状态改为true
+      
       if(sum==this.list.length){
         this.checkedAll=true;
       }else{
         this.checkedAll=false;
       }
     },
+    
     //长按删除功能
     showDeleteButton(i){
       console.log(i)

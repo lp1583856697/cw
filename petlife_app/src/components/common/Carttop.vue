@@ -25,7 +25,7 @@ export default {
       this.$router.push("/Shopping")
     }
   }
-}
+}  
 </script>
 <style scoped>
   .container{

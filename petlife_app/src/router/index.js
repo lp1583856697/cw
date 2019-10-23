@@ -24,6 +24,7 @@ import ReleaseThree from "../components/common/ReleaseThree.vue"
 import ReleaseFour from "../components/common/ReleaseFour.vue"
 import ReleaseFive from "../components/common/ReleaseFive.vue"
 import ReleaseOne from "../components/common/ReleaseOne.vue"
+import Details from "../components/views/Details.vue"
 
 //2.为组件指定访问路径
 Vue.use(Router)
@@ -43,6 +44,7 @@ export default new Router({
     {path:"/cart",component:Cart},
     {path:"/community",component:Community},
     {path:"/",component:Community},
-    {path:"/cartitem",component:CartItem}
+    {path:"/cartitem",component:CartItem},
+    {path:"/Details",component:Details}
   ]
 })
