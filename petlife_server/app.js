@@ -61,6 +61,20 @@ server.get("/shop_zhuan",(req,res)=>{
     }
   })
 })
+//获取商城专区商品列表
+server.get("/shop_zhuan_s",(req,res)=>{
+  var zid=parseInt(req.query.zid);
+  console.log(zid);
+  var sql="SELECT * FROM cw_zhuan_shop WHERE zid=?";
+  pool.query(sql,[zid],(err,result)=>{
+    if(err)throw err;
+    if(result.length>0){
+      res.send({code:1,msg:"获取成功",data:result})
+    }else{
+      res.send({code:-1,msg:"获取失败"})
+    }
+  })
+})
 //2.功能二:完成用户登录
 server.get("/login1",(req,res)=>{
   //(1)获取脚手架参数 phone upwd

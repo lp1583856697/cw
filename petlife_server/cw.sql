@@ -42,6 +42,24 @@ INSERT INTO cw_zhuan VALUES(null,"日用","01.jpg");
 INSERT INTO cw_zhuan VALUES(null,"窝具","01.jpg");
 INSERT INTO cw_zhuan VALUES(null,"服饰","01.jpg");
 INSERT INTO cw_zhuan VALUES(null,"玩具","01.jpg");
+/****商城专区商品列表****/
+CREATE TABLE cw_zhuan_shop(
+  zsid INT PRIMARY KEY AUTO_INCREMENT,
+  zsname VARCHAR(32),
+  img_zs VARCHAR(32),
+  zid INT
+);
+INSERT INTO cw_zhuan_shop VALUES
+(null,"狗粮商品","06.jpg",1),
+(null,"狗粮商品","06.jpg",1),
+(null,"狗粮商品","06.jpg",1),
+(null,"狗粮商品","06.jpg",1),
+(null,"狗粮商品","06.jpg",1),
+(null,"零食商品","06.jpg",2),
+(null,"零食商品","06.jpg",2),
+(null,"零食商品","06.jpg",2),
+(null,"零食商品","06.jpg",2),
+(null,"零食商品","06.jpg",2);
 
 /****首页轮播图****/
 CREATE TABLE cw_index_carousel(
