@@ -1,6 +1,6 @@
 <template>
   <div class="login1">
-    <van-icon name="arrow-left" class="v1"/>
+    <van-icon name="arrow-left" class="v1"  @click="exit"/>
     <img src="../../assets/img13.jpg" alt="" class="i1">
     <van-cell-group>
       <van-field v-model="phone"  :attr="{autofocus:true}" required clearable label="手机号" placeholder="请输入您的手机号" />
@@ -32,6 +32,9 @@ export default {
     }
   },
   methods:{
+    exit:function () {
+      this.$router.push("/")
+    },
     login(){
       var p=this.phone;
       var preg=/^1[3-9]\d{9}$/;

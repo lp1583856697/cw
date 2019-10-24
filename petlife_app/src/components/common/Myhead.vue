@@ -1,9 +1,8 @@
 <template>
 <!-- "我的"页面的头部分 包含头像/昵称/个性签名以及设置 -->
   <div class="rootStyle">
-    <img src="../../assets/setting.png" class="setting">
+    <img src="../../assets/setting.png" class="setting" @click="leave">
     <div class="leftimgandlablestyle">
-      <!-- <img :src="imgurl" alt="" class="imgStyle"> -->
       <!-- 使用vant Image 图片中的圆形图片 -->
       <van-image round width="70px" height="70px" :src="imgurl" />
       <div class="rightOfImg">
@@ -17,6 +16,11 @@
 export default {
   data(){
     return{
+    }
+  },
+  methods: {
+    leave:function () {
+      this.$router.push("/Myset")
     }
   },
   props:{

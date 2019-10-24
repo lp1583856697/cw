@@ -53,22 +53,23 @@ export default {
       ]
     }
   },
-  created(){
-    
-  },
-  watch: {
-    selected:function(val,oldVal){
+  created(){ },//created;
+    watch: {
+      selected:function(val,oldVal){
       // 这里就可以通过 val 的值变更来确定去向
       // console.log("点了");
+      console.log(val,oldVal);
+      // val是跳转后的页面组件
+      // oldVal是跳转之前的页面组件
       switch (val){
         case "community":
         case "shopping":
-        case "Release":
-          this.$router.push("/"+val);
+          case "Release":
+            this.$router.push("/"+val);
           break;
         case "cart":
-        case "Me":
-          if(sessionStorage.isLogin=="true"){
+          case "Me":
+            if(sessionStorage.isLogin=="true"){
             this.$router.push("/"+val);
           }else{
             this.$router.push({
@@ -80,6 +81,7 @@ export default {
       }
     }
   }
+
 }
 </script>
 
