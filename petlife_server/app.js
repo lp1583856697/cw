@@ -13,6 +13,8 @@ const cors = require("cors");
 const session = require("express-session");
 //引入路由模块
 const community = require("./routers/community");
+//引入购物车路由模块
+const cart = require("./routers/cart")
 
 //3:创建数据库连接池(池 提高效率)
 var pool = mysql.createPool({
@@ -44,13 +46,14 @@ server.use(express.static("public"))
 //7:创建express对象绑定4006端口
 server.listen(4006);
 //8.路由器管理路由
-server.use("/community", community)
+server.use("/community", community);
+server.use("/cart",cart)
 
 //1.获取商城专区数据
 server.get("/shop_zhuan", (req, res) => {
   var pno = parseInt(req.query.pno);
   var size = parseInt(req.query.size);
-  console.log(pno, size);
+  //console.log(pno, size);
   var sql = "SELECT * FROM cw_zhuan LIMIT ?,?";
   pool.query(sql, [pno, size], (err, result) => {
     if (err) throw err;

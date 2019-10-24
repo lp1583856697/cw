@@ -13,6 +13,12 @@
 export default {
   data(){
     return{checked:false}
+  },
+  methods:{
+    seleceAll(event){
+      var all=event.target.checked;
+      console.log(all)
+    }
   }
 }
 </script>

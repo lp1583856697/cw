@@ -16,7 +16,13 @@ export default {
     return{}
   },
   created() {
-    //创建成功添加生命周期
+    //cartitem数据请求
+    axios.get("community/cartitem").then(res=>{
+      console.log(result)
+    })
+    .catch(err=>{
+      console.log(err)
+    })
   },
   components:{
     "carttop":Carttop,

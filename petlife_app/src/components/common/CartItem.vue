@@ -30,8 +30,8 @@ export default {
       value:1,
       //购物车列表
       list:[
-        {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"},
-        {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"},
+        {pic:"01",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"},
+        {pic:"01",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"},
         {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"}
       ]
     }
@@ -101,8 +101,8 @@ export default {
   margin:58px 5px;
 }
 .item img{
-  height:7rem;
-  margin:10px 14px;
+  height:6rem;
+  margin:7px 6px;
 }
 /* 右侧div文本内容 */
 .rightcontent{
