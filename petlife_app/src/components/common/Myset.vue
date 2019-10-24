@@ -1,6 +1,6 @@
 <template>
   <div class="Myset">
-    <van-icon name="arrow-left" class="v1"/>
+    <van-icon name="arrow-left" class="v1" @click="exit"/>
     <div class="d1">设置</div>
     <div class="d2">
         <div>修改登录密码</div>
@@ -48,7 +48,7 @@
         </div>
     </div>
     <van-divider />
-    <van-button type="warning" size="large">退出当前登录账户</van-button>
+    <van-button type="warning" size="large" @click="leave">退出当前登录账户</van-button>
   </div>
 </template>
 <script>
@@ -59,6 +59,12 @@ export default {
     }
   },
   methods: {
+    exit:function () {
+      this.$router.push("/Me");
+    },
+    leave:function () {
+      this.$router.push("/");
+    },
     showPopup() {
       this.show = true;
     }
@@ -97,12 +103,15 @@ export default {
   }
   .s1{
     font-size: 14px;
-    letter-spacing: 0;
     padding-left: 5px;
     color: #FD8D65;
     font-weight: normal;
   }
   .van-button{
-    margin-top: 100px;
+    margin-top: 80px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: bold;
   }
 </style>

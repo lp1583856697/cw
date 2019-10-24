@@ -1,7 +1,7 @@
 <template>
 <!-- 在该页面下选择登录方式 -->
   <div class="rootStyle">
-    <van-icon name="arrow-left" class="v1"/>
+    <van-icon name="arrow-left" class="v1" @click="exit"/>
     <span class="s1">选择登录方式</span> 
     <van-button type="primary" size="large">微信登录</van-button> 
     <span class="s2">使用其他方式登录</span>
@@ -12,6 +12,11 @@
 export default {
   data(){
     return{
+    }
+  },
+  methods: {
+    exit:function () {
+      this.$router.push("/");
     }
   },
   props:{
