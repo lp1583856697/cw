@@ -97,12 +97,15 @@ export default {
   }
   .s1{
     font-size: 14px;
-    letter-spacing: 0;
     padding-left: 5px;
     color: #FD8D65;
     font-weight: normal;
   }
   .van-button{
-    margin-top: 100px;
+    margin-top: 80px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: bold;
   }
 </style>
