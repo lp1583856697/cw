@@ -64,7 +64,7 @@ export default {
         var url = "community/storylist";
         var obj = {pno:1,psize:3};
         axios.get(url,{params:obj}).then(result=>{
-            console.log(result);
+            // console.log(result);
             this.storylist = result.data.data;
         }).catch(err=>{
             console.log(err);
