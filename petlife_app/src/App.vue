@@ -22,7 +22,7 @@ export default {
     // console.log("this.$route.path", this.$route.path)
     return {
       // 如果this.$route.path为community或shopping...其中一个,则this.$route.path.substring(1)都为true,选中当前为true的id。如果this.$route.path为"/",则this.$route.path.substring(1)为false,执行第二个条件语句,选中community
-      hideArr: ["/Login", "/Login1", "/Details", "/login", "/login1", "/details"],
+      hideArr: ["/Login", "/Login1", "/Details", "/login", "/login1", "/details","/Myreg","/myreg"],
       selected:this.$route.path.substring(1) || "community",
       tablist:[
         {
