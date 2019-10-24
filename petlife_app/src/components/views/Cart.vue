@@ -2,13 +2,15 @@
   <div class="bgcolor">
     <carttop></carttop>
     <cartitem></cartitem>
-    <cartcard></cartcard>   
+    <cartcard></cartcard>
+    <!-- <cartbutton></cartbutton>    -->
   </div>
 </template>
 <script>
 import Carttop from '../common/Carttop.vue'
 import CartCard from '../common/CartCard.vue'
 import CartItem from '../common/CartItem.vue'
+import CartButton from '../common/CartButton.vue'
 export default {
   data(){
     return{}
@@ -19,7 +21,8 @@ export default {
   components:{
     "carttop":Carttop,
     "cartcard":CartCard,
-    "cartitem":CartItem  
+    "cartitem":CartItem,
+    "cartbutton":CartButton 
   }
 }
 </script>

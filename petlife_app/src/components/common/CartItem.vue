@@ -3,7 +3,7 @@
     <div class="item" v-for="(item,i) of list" :key="i" @touchstart="showDeleteButton(i)" @touchend="clearend(i)">
       <!-- 商品复选框-->
       <div class="checkbox">
-        <van-checkbox @change="itemSelect" v-model="item.checked" checked-color="#ddd"></van-checkbox>
+        <van-checkbox @change="itemSelect" v-model="item.checked" checked-color="#ff8928"></van-checkbox>
       </div>  
       <!-- 图片 -->
       <img :src="require('../../assets/images/'+list[i].pic+'.jpg')" alt="">
