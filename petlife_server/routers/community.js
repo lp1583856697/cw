@@ -13,7 +13,7 @@ router.get("/sybanner",(req,res)=>{
         res.send({code:-1,msg:"获取失败"});
       }
     });
-  })
+  })   
 
 //2.养宠知识列表
 router.get("/knowledgelist",(req,res)=>{
