@@ -122,4 +122,6 @@ CREATE TABLE cw_cart_item(
   price DECIMAL(10,2)
 );
 INSERT INTO cw_cart_item VALUES 
-(NULL,1,"【luscious/路斯】猫用小鱼干50g*3盒","公鱼原味,50g*3盒",1,"images/goods.jpg",46.9)
+(NULL,1,"【luscious/路斯】猫用小鱼干50g*3盒","公鱼原味,50g*3盒",1,"images/goods.jpg",46.9),
+(NULL,1,"【luscious/路斯】猫用小鱼干50g*3盒","公鱼原味,50g*3盒",1,"images/goods.jpg",46.9),
+(NULL,1,"【luscious/路斯】猫用小鱼干50g*3盒","公鱼原味,50g*3盒",1,"images/goods.jpg",46.9);

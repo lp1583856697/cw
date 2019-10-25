@@ -65,7 +65,7 @@ export default {
           console.log(this.$route);
           // sessionStorage里面第二个参数保存之后都会变成字符串""
           sessionStorage.setItem("isLogin",true);
-          //跳转/组件
+          //如果登陆成功，跳转到登陆之前的原页面
           this.$router.push(this.$route.query.oldPath || "/community");
         }
       })

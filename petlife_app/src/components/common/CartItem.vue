@@ -1,12 +1,12 @@
 <template>
   <div class="container" >
-    <div class="item" v-for="(item,i) of list" :key="i" @touchstart="showDeleteButton(i)" @touchend="clearend(i)">
+    <div class="item" v-for="(item,i) of itemlist" :key="i" @touchstart="showDeleteButton(i)" @touchend="clearend(i)">
       <!-- 商品复选框-->
       <div class="checkbox">
         <van-checkbox @change="itemSelect" v-model="item.checked" checked-color="#ff8928"></van-checkbox>
       </div>  
       <!-- 图片 -->
-      <img :src="require('../../assets/images/'+list[i].pic+'.jpg')" alt="">
+      <img :src="require('../../assets/images/'+itemlist[i].pic+'.jpg')" alt="">
       <!-- 右侧文字 -->
       <div class="rightcontent"> 
         <div class="name">
@@ -24,17 +24,8 @@
 </template>
 <script>
 export default {
-  data(){
-    return{
-      checked:false,//商品复选框按钮状态
-      value:1,
-      //购物车列表
-      list:[
-        {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"},
-        {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"},
-        {pic:"goods2",name:"【luscious/路斯】猫用小鱼干50g*3盒",subname:"公鱼原味,50g*3盒",price:"45.90"}
-      ]
-    }
+  props:{
+    itemlist:{default:[]}
   },
   methods:{
     itemSelect(){
@@ -101,8 +92,8 @@ export default {
   margin:58px 5px;
 }
 .item img{
-  height:7rem;
-  margin:10px 14px;
+  height:6rem;
+  margin:7px 6px;
 }
 /* 右侧div文本内容 */
 .rightcontent{

@@ -10,7 +10,7 @@
         <homemore :more="more2"></homemore> 
         <storylist :storylist="storylist"></storylist>      
     </div>
-</template>
+</template>   
 <script>
 import axios from "axios"
 import Pageheader from "../common/Pageheader.vue"
@@ -64,7 +64,7 @@ export default {
         var url = "community/storylist";
         var obj = {pno:1,psize:3};
         axios.get(url,{params:obj}).then(result=>{
-            console.log(result);
+            // console.log(result);
             this.storylist = result.data.data;
         }).catch(err=>{
             console.log(err);
