@@ -4,7 +4,7 @@ const pool=require("../pool");
 //2.已选购物车的商品
 router.get("/findcart",(req,res)=>{
   //获取用户的uid
-  var uid=req.session.uid;
+  var uid=req.session.user_id;
   console.log(uid);
   //如果没有uid，提示登录
   // if(!uid){
