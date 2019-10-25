@@ -59,10 +59,10 @@ export default {
     }
   },
   methods: {
-    exit:function () {
+    exit() {
       this.$router.push("/Me");
     },
-    leave:function () {
+    leave() {
       this.$router.push("/");
     },
     showPopup() {

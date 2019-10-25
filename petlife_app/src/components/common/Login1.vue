@@ -32,7 +32,7 @@ export default {
     }
   },
   methods:{
-    exit:function () {
+    exit() {
       this.$router.push("/")
     },
     login(){
