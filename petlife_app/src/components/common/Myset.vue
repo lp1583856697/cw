@@ -2,7 +2,7 @@
   <div class="Myset">
     <van-icon name="arrow-left" class="v1" @click="exit"/>
     <div class="d1">设置</div>
-    <div class="d2">
+    <div class="d2" @click="one">
         <div>修改登录密码</div>
         <div>
           <img src="../../assets/gm.png" alt="">
@@ -59,6 +59,9 @@ export default {
     }
   },
   methods: {
+    one(){
+      this.$router.push("/Mygaimi2");
+    },
     exit() {
       this.$router.push("/Me");
     },

@@ -138,7 +138,7 @@ server.get("/Myreg", (req, res) => {
 //   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
 //   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
 
-//3.功能四:完成用户密码更改
+//4.功能四:用户忘记原密码时,完成用户密码更改
 server.get("/Mygaimi", (req, res) => {
   var obj=req.query;
   console.log(obj);

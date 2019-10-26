@@ -39,7 +39,7 @@ export default new Router({
     {path:"/ReleaseThree",component:ReleaseThree},
     {path:"/ReleaseFour",component:ReleaseFour},
     {path:"/Release",component:Release},
-    {path:"/Mygaim2",component:Mygaimi2},
+    {path:"/Mygaimi2",component:Mygaimi2},
     {path:"/Mygaimi",component:Mygaimi},
     {path:"/Myset",component:Myset},
     {path:"/Myreg",component:Myreg},
