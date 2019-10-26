@@ -87,7 +87,7 @@ export default {
   .d2{
     display: flex;
     justify-content: space-between;
-    line-height: 30px;
+    line-height: 32px;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -108,7 +108,7 @@ export default {
     font-weight: normal;
   }
   .van-button{
-    margin-top: 80px;
+    margin-top: 97px;
     font-size: 18px;
     letter-spacing: 1px;
     color: #fff;
