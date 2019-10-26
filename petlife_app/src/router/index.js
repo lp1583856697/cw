@@ -20,6 +20,7 @@ import CartItem from '../components/common/CartItem.vue'
 import Myreg from "../components/common/Myreg.vue"
 import Myset from "../components/common/Myset.vue"
 import Mygaimi from '../components/common/Mygaimi.vue'
+import Mygaimi2 from '../components/common/Mygaimi2.vue'
 import Release from "../components/views/Release.vue"
 import ReleaseTwo from "../components/common/ReleaseTwo.vue"
 import ReleaseThree from "../components/common/ReleaseThree.vue"
@@ -38,6 +39,7 @@ export default new Router({
     {path:"/ReleaseThree",component:ReleaseThree},
     {path:"/ReleaseFour",component:ReleaseFour},
     {path:"/Release",component:Release},
+    {path:"/Mygaim2",component:Mygaimi2},
     {path:"/Mygaimi",component:Mygaimi},
     {path:"/Myset",component:Myset},
     {path:"/Myreg",component:Myreg},

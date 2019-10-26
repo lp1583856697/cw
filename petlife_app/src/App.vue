@@ -34,7 +34,9 @@ export default {
         "/Myset",
         "/myset",
         "/Mygaimi",
-        "/mygaimi"
+        "/mygaimi",
+        "/Mygaimi2",
+        "/mygaimi2"
       ],
       //给selected了一个初始值，这时selected的值发生了变化(model)，页面上的视图也会相应变化
       selected: this.$route.path.substring(1) || "community",
