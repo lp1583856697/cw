@@ -4,7 +4,7 @@
     <van-icon name="arrow-left" class="v1" @click="exit"/>
     <span class="s1">选择登录方式</span> 
     <van-button type="primary" size="large">微信登录</van-button> 
-    <span class="s2">使用其他方式登录</span>
+    <span class="s2" @click="login1">使用其他方式登录</span>
     <span class="s3">已阅读并同意服务协议与隐私政策</span>
   </div>
 </template>
@@ -15,7 +15,10 @@ export default {
     }
   },
   methods: {
-    exit:function () {
+    login1(){
+      this.$router.push("/Login1");
+    },
+    exit() {
       this.$router.push("/");
     }
   },

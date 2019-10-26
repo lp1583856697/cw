@@ -68,10 +68,10 @@ CREATE TABLE cw_index_carousel(
     href VARCHAR(128)
 );
 INSERT INTO cw_index_carousel VALUES
-(null,'sy_banner/1746014.jpg',''),
-(null,'sy_banner/1747083.jpg',''),
 (null,'sy_banner/1748028.jpg',''),
-(null,'sy_banner/1750155.jpg','');
+(null,'sy_banner/1748028.jpg',''),
+(null,'sy_banner/1748028.jpg',''),
+(null,'sy_banner/1748028.jpg','');
 
 /****首页养宠知识列表****/
 CREATE TABLE cw_index_knowledgelist(
@@ -82,9 +82,9 @@ CREATE TABLE cw_index_knowledgelist(
   likecount INT
 );
 INSERT INTO cw_index_knowledgelist VALUES
-(NULL,'sy_banner/1746014.jpg','如何保护狗狗的牙齿',153,10),
-(NULL,'sy_banner/1746014.jpg','泰迪的造型能维持多久',129,66),
-(NULL,'sy_banner/1746014.jpg','狗狗抗拒梳毛怎么办',77,2);
+(NULL,'images/yachi.jpg','如何保护狗狗的牙齿',153,10),
+(NULL,'images/taidi.jpg','泰迪的造型能维持多久',129,66),
+(NULL,'images/shumao.jpg','狗狗抗拒梳毛怎么办',77,2);
 
 /****首页铲屎官热议****/
 CREATE TABLE cw_index_comment(
@@ -106,9 +106,9 @@ CREATE TABLE cw_index_storylist(
   text VARCHAR(128)
 );
 INSERT INTO cw_index_storylist VALUES
-(NULL,'sy_banner/1746014.jpg','搭建用户桥梁倾听宠物新生','家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫灰灰的狗狗狗狗'),
-(NULL,'sy_banner/1746014.jpg','搭建用户桥梁倾听宠物新生','家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫灰灰的狗狗狗狗'),
-(NULL,'sy_banner/1746014.jpg','搭建用户桥梁倾听宠物新生','家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫灰灰的狗狗狗狗');
+(NULL,'images/timg.jpg','搭建用户桥梁倾听宠物新生','家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫灰灰的狗狗狗狗'),
+(NULL,'images/timg.jpg','搭建用户桥梁倾听宠物新生','家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫灰灰的狗狗狗狗'),
+(NULL,'images/timg.jpg','搭建用户桥梁倾听宠物新生','家中从小养过几条小狗，至今还记得陪伴我时间最久的那只名叫灰灰的狗狗狗狗');
 
 /******购物车卡片*******/
 CREATE TABLE cw_cart_item(

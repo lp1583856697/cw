@@ -19,7 +19,7 @@ export default {
     }
   },
   methods: {
-    leave:function () {
+    leave() {
       this.$router.push("/Myset")
     }
   },

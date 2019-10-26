@@ -2,7 +2,7 @@
   <div class="Myset">
     <van-icon name="arrow-left" class="v1" @click="exit"/>
     <div class="d1">设置</div>
-    <div class="d2">
+    <div class="d2" @click="one">
         <div>修改登录密码</div>
         <div>
           <img src="../../assets/gm.png" alt="">
@@ -59,11 +59,22 @@ export default {
     }
   },
   methods: {
-    exit:function () {
+    one(){
+      this.$router.push("/Mygaimi2");
+    },
+    exit() {
       this.$router.push("/Me");
     },
-    leave:function () {
-      this.$router.push("/");
+    leave() {
+      // 创建交互确认提示框
+      this.$messagebox.confirm('确定要退出该登录账户吗?').then(action => {
+        // console.log(action);  //confirm
+        sessionStorage.isLogin = "false";
+        this.$messagebox.alert("退出成功","提示");
+        this.$router.push("/");
+      }).catch(reject=>{
+        // console.log(reject);  //cancel
+      })
     },
     showPopup() {
       this.show = true;
@@ -87,7 +98,7 @@ export default {
   .d2{
     display: flex;
     justify-content: space-between;
-    line-height: 30px;
+    line-height: 32px;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -108,7 +119,7 @@ export default {
     font-weight: normal;
   }
   .van-button{
-    margin-top: 80px;
+    margin-top: 97px;
     font-size: 18px;
     letter-spacing: 1px;
     color: #fff;

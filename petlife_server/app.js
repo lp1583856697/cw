@@ -152,37 +152,30 @@ server.get("/Myreg", (req, res) => {
 //   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
 //   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
 
-//4.功能四：加入购物车
-// server.get("/addcart",(req,res)=>{
-//   //1.获取当前用户登录的凭证id
-//   // var uid=req.session.uid;
-//   // console.log(uid);
-//   // console.log(111);
-//   // if(!uid){
-//   //   res.send({code:-1,msg:"请登录"});
-//   //   return;
-//   // }
-//   //4.获取商品编号cid,商品价格price,商品名称title
-//   var cid=req.query.cid;
-//   var ctitle=req.query.ctitle;
-//   var price=req.query.price;
-//   //5查询指定用户是否购买过次商品
-//   var sql="SELECT id FROM cw_cart WHERE uid=? AND cid=?"
-//   //6执行sql语句
-//   pool.query(sql,[uid,cid],(err,result)=>{
-//     if(err)throw err;
-//     //7.在回调函数中判断是否购买过
-//     if(result.length==0){
-//       //8.添加一条数据
-//       var sql=`INSERT INTO cw_cart_item VALUES(NULL,${cid},'${ctitle}','${sbutitle}',${count},${pic},${price})`
-//     }else{
-//       //9.更新数据
-//       var sql=`UPDATE cw_cart_item SET count+=1 WHERE uid=${uid} AND lid=${lid}`;
-//     }
-//     //10.执行sql语句
-//     pool.query(sql,(err,result)=>{
-//       if(err)throw err;
-//       res.send({code:1,msg:"添加成功"})
-//     })
-//   })
-// })
+//4.功能四:用户忘记原密码时,完成用户密码更改
+server.get("/Mygaimi", (req, res) => {
+  var obj=req.query;
+  console.log(obj);
+  var i=0;
+  for(var key in obj){
+		i++;
+		//console.log(key,obj[key]);
+		//如果属性值为空，则提示属性名是必须的
+		if(!obj[key]){
+			res.send({code:i ,msg:key+' required'});
+			return;
+		}
+	}
+	//执行SQL语句
+	pool.query('UPDATE CW_user_login SET ? WHERE phone=?',[obj,obj.phone],
+	function(err,result){
+		if(err)throw err;
+		console.log(result);
+		//判断是否检索到用户，如果检索到，把该用的对象响应到浏览器，否则响应检索不到
+		if(result.affectedRows>0){
+			res.send({code:200,msg:'update suc'});
+		}else{
+			res.send({code:301,msg:'can not found'});
+		}
+	});
+})

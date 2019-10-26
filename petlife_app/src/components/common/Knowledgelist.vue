@@ -43,7 +43,7 @@ export default {
         margin-right:.7rem;
     }
     .dogImg{
-        width:13rem;height:6rem;  /*宽高*/
+        width:12.5rem;height:6.3rem;  /*宽高*/
         border-radius: .5rem;
     }
     .pageviews,.likecount{
