@@ -69,9 +69,14 @@ export default {
       // 创建交互确认提示框
       this.$messagebox.confirm('确定要退出该登录账户吗?').then(action => {
         // console.log(action);  //confirm
-        sessionStorage.isLogin = "false";
-        this.$messagebox.alert("退出成功","提示");
-        this.$router.push("/");
+        this.axios.get("/mylogout").then(result=>{
+          console.log(result);
+          if(result.data.code==1){
+            sessionStorage.isLogin = "false";
+            this.$messagebox.alert("退出成功","提示");
+            this.$router.push("/");
+          }
+        })
       }).catch(reject=>{
         // console.log(reject);  //cancel
       })

@@ -3,6 +3,10 @@ const router=express.Router();
 const pool=require("../pool");
 //2.已选购物车的商品
 router.get("/findcart",(req,res)=>{
+  if(!req.session.user_id){
+    res.sendStatus(401);
+    return;
+  }
   // //获取用户的uid
   // var uid=req.session.uid;
   // console.log(uid);
@@ -22,6 +26,10 @@ router.get("/findcart",(req,res)=>{
 })
 //3.购物车小卡片
 router.get("/card",(req,res)=>{
+  if(!req.session.user_id){
+    res.sendStatus(401);
+    return;
+  }
   var sql ="SELECT cid,title,pic,price,sold FROM cw_cart_card";
   pool.query(sql,(err,result)=>{
     if(err)throw err;

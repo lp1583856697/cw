@@ -39,9 +39,9 @@ router.get("/commentlist",(req,res)=>{
   var pno=parseInt(req.query.pno);
   var psize = parseInt(req.query.psize);
   var start = (pno-1)*psize;
-  console.log("pno",pno);
-  console.log("psize",psize);
-  console.log("start",start);
+  // console.log("pno",pno);
+  // console.log("psize",psize);
+  // console.log("start",start);
   var sql = "SELECT * FROM cw_index_comment LIMIT ?,?";
   pool.query(sql,[start,psize],(err,result)=>{
     if(err) throw err;
@@ -59,9 +59,9 @@ router.get("/storylist",(req,res)=>{
   var pno=parseInt(req.query.pno);
   var psize = parseInt(req.query.psize);
   var start = (pno-1)*psize;
-  console.log("pno",pno);
-  console.log("psize",psize);
-  console.log("start",start);
+  // console.log("pno",pno);
+  // console.log("psize",psize);
+  // console.log("start",start);
   var sql = "SELECT * FROM cw_index_storylist LIMIT ?,?";
   pool.query(sql,[start,psize],(err,result)=>{
     if(err) throw err;
