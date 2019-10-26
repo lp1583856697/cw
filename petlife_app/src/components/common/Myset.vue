@@ -63,7 +63,13 @@ export default {
       this.$router.push("/Me");
     },
     leave() {
-      this.$router.push("/");
+      // 创建交互确认提示框
+      this.$messagebox.confirm("确定要退出该登录账户吗?")
+      if(this.$messagebox.confirm("确定要退出该登录账户吗?")==false){
+        return false;
+      }else{
+        console.log("退出成功")
+      }
     },
     showPopup() {
       this.show = true;

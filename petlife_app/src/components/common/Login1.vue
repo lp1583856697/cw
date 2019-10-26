@@ -7,8 +7,8 @@
       <van-field v-model="upwd" type="password" label="密码" placeholder="请输入登录密码" required />
     </van-cell-group>
     <div class="d1">
-      <span>忘记密码?</span>
-      <span>注册账户</span>
+      <span @click="mygaimi">忘记密码?</span>
+      <span @click="myreg">注册账户</span>
     </div>
     <mt-button size="large" @click="login">登录</mt-button>
     <p>
@@ -32,6 +32,12 @@ export default {
     }
   },
   methods:{
+    mygaimi(){
+      this.$router.push("/Mygaimi")
+    },
+    myreg(){
+      this.$router.push("/Myreg")
+    },
     exit() {
       this.$router.push("/")
     },
