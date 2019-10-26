@@ -9,15 +9,15 @@
     </div>
     <!-- 下面的商品推荐 -->
     <div class="recommend">
-      <div class="card" v-for="(item,i) of list" :key="i">
+      <div class="card" v-for="(item,i) of cardlist" :key="i">
       <!-- 二、商品图片 -->
-        <img :src="require('../../assets/images/'+list[i].pic)" alt="">
+        <img :src="'http://127.0.0.1:4006/'+item.pic" alt="">
         <!-- 商品名称 -->
         <div class="title">{{item.title}}</div>  
         <!-- 价格 -->
         <div class="bottom">
           <span id="price">¥{{item.price}}</span>
-          <span id="sale">已售{{item.sale}}件</span>
+          <span id="sale">已售{{item.sold}}件</span>
         </div>
       </div>
     </div>
@@ -35,17 +35,10 @@ export default {
   data(){
     return{
       checkedAll:false,
-      list:[
-        {title:"【Pure&Natural/伯纳天纯】伯纳天纯猫粮6.8kg*2袋",pic:"03.jpg",price:598,sale:0},
-        {title:"【Hoopet/华元宠具】hoopet猫头猫砂垫米猫用品",pic:"03.jpg",price:46.9,sale:0},
-        {title:"【Pure&Natural/伯纳天纯】伯纳天纯猫粮6.8kg*2袋",pic:"04.jpg",price:598,sale:0},
-        {title:"【Hoopet/华元宠具】hoopet猫头猫砂垫米猫用品",pic:"05.jpg",price:46.9,sale:0},
-        {title:"【Pure&Natural/伯纳天纯】伯纳天纯猫粮6.8kg*2袋",pic:"03.jpg",price:598,sale:0},
-        {title:"【Hoopet/华元宠具】hoopet猫头猫砂垫米猫用品",pic:"03.jpg",price:46.9,sale:0},
-        {title:"【Pure&Natural/伯纳天纯】伯纳天纯猫粮6.8kg*2袋",pic:"04.jpg",price:598,sale:0},
-        {title:"【Hoopet/华元宠具】hoopet猫头猫砂垫米猫用品",pic:"05.jpg",price:46.9,sale:0}
-      ]
     }
+  },
+  props:{
+    cardlist:{default:[]}
   },
   methods:{
     //1找到全选按钮的状态
@@ -54,6 +47,7 @@ export default {
         //2.获取当前全选按钮的状态
         var all=event.target.checked;
         console.log(all)
+        
       }
   }
 }

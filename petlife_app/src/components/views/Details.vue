@@ -12,16 +12,16 @@
         <div class="goods-price">{{ formatPrice(goods.price) }}</div>
       </van-cell>
       <van-cell class="goods-express">
-        <van-col span="10">运费：{{ goods.express }}</van-col>
-        <van-col span="14">剩余：{{ goods.remain }}</van-col>
+        <van-col span="10">快递：{{ goods.express }}</van-col>
+        <van-col span="14">销量：{{ goods.remain }}</van-col>
       </van-cell>
     </van-cell-group>
 
     <van-cell-group class="goods-cell-group">
       <van-cell value="进入店铺" icon="shop-o" is-link @click="sorry">
         <template slot="title">
-          <span class="van-cell-text">有赞的店</span>
-          <van-tag class="goods-tag" type="danger">官方</van-tag>
+          <span class="van-cell-text">路斯 </span>
+          <van-tag class="goods-tag" type="danger">官方旗舰店</van-tag>
         </template>
       </van-cell>
       <van-cell title="线下门店" icon="location-o" is-link @click="sorry" />
@@ -38,7 +38,7 @@
       <van-goods-action-icon icon="cart-o" @click="onClickCart">
         购物车
       </van-goods-action-icon>
-      <van-goods-action-button type="warning" @click="sorry">
+      <van-goods-action-button type="warning" @click="addCart" >
         加入购物车
       </van-goods-action-button>
       <van-goods-action-button type="danger" @click="sorry">
@@ -78,10 +78,10 @@ export default {
   data() {
     return {
       goods: {
-        title: '美国伽力果（约680g/3个）',
-        price: 2680,
+        title: '【路斯】饼干夹心酥 80g',
+        price: 35,
         express: '免运费',
-        remain: 19,
+        remain: 34,
         thumb: [
           'https://img.yzcdn.cn/public_files/2017/10/24/e5a5a02309a41f9f5def56684808d9ae.jpeg',
           'https://img.yzcdn.cn/public_files/2017/10/24/1791ba14088f9c2be8c610d0a6cc0f93.jpeg'
@@ -96,8 +96,8 @@ export default {
     onClickCart() {
       this.$router.push('cart');
     },
-    sorry() {
-      Toast('暂无后续逻辑~');
+    addCart(){
+      console.log(222)
     }
   }
 };

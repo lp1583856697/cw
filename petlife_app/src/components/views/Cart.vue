@@ -2,7 +2,7 @@
   <div class="bgcolor">
     <carttop></carttop>
     <cartitem :itemlist=itemlist></cartitem>
-    <cartcard></cartcard>
+    <cartcard :cardlist=cardlist></cartcard>
     <!-- <cartbutton></cartbutton>    -->
   </div>
 </template>
@@ -15,18 +15,27 @@ import CartButton from '../common/CartButton.vue'
 export default {
   data(){
     return{
-      itemlist:[]
+      itemlist:[],
+      cardlist:[]
     }
   },
   created() {
     //findcart数据请求
     axios.get("cart/findcart").then(result=>{
-      console.log(result)
+      // console.log(result)
       if(result.data.code==1){
         this.itemlist=result.data.data;
       }
     })
     .catch(err=>{
+      console.log(err)
+    })
+    //购物车小卡片
+    axios.get("cart/card").then(result=>{
+      //console.log(result)
+      this.cardlist=result.data.data;
+      // console.log(this.cardlist)
+    }).catch(err=>{
       console.log(err)
     })
   },

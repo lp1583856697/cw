@@ -78,6 +78,20 @@ server.get("/shop_zhuan_s",(req,res)=>{
     }
   })
 })
+// //查询指定购物车的列表
+// server.get("/findcart",(req,res)=>{
+//   var uid=req.session.uid;
+//   if(!uid){
+//     res.send({code:-1,msg:"请登录"})
+//     return;
+//   }
+//   //创建sql语句
+//   var sql="SELECT uid,cid,title,subtitle,count,pic,price FROM cw_cart_item WHERE uid=? "
+//   pool.query(sql,[uid],(err,result)=>{
+//     if(err)throw err;
+//     res.send({code:1,msg:"登录成功",data:result})
+//   })
+// })
 //2.功能二:完成用户登录
 server.get("/login1", (req, res) => {
   //(1)获取脚手架参数 phone upwd
@@ -137,3 +151,38 @@ server.get("/Myreg", (req, res) => {
 //打开浏览器在地址栏输入按回
 //   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
 //   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
+
+//4.功能四：加入购物车
+// server.get("/addcart",(req,res)=>{
+//   //1.获取当前用户登录的凭证id
+//   // var uid=req.session.uid;
+//   // console.log(uid);
+//   // console.log(111);
+//   // if(!uid){
+//   //   res.send({code:-1,msg:"请登录"});
+//   //   return;
+//   // }
+//   //4.获取商品编号cid,商品价格price,商品名称title
+//   var cid=req.query.cid;
+//   var ctitle=req.query.ctitle;
+//   var price=req.query.price;
+//   //5查询指定用户是否购买过次商品
+//   var sql="SELECT id FROM cw_cart WHERE uid=? AND cid=?"
+//   //6执行sql语句
+//   pool.query(sql,[uid,cid],(err,result)=>{
+//     if(err)throw err;
+//     //7.在回调函数中判断是否购买过
+//     if(result.length==0){
+//       //8.添加一条数据
+//       var sql=`INSERT INTO cw_cart_item VALUES(NULL,${cid},'${ctitle}','${sbutitle}',${count},${pic},${price})`
+//     }else{
+//       //9.更新数据
+//       var sql=`UPDATE cw_cart_item SET count+=1 WHERE uid=${uid} AND lid=${lid}`;
+//     }
+//     //10.执行sql语句
+//     pool.query(sql,(err,result)=>{
+//       if(err)throw err;
+//       res.send({code:1,msg:"添加成功"})
+//     })
+//   })
+// })

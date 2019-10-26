@@ -6,13 +6,13 @@
         <van-checkbox @change="itemSelect" v-model="item.checked" checked-color="#ff8928"></van-checkbox>
       </div>  
       <!-- 图片 -->
-      <img :src="require('../../assets/images/'+itemlist[i].pic+'.jpg')" alt="">
+      <img :src="'http://127.0.0.1:4006/'+item.pic" alt="">
       <!-- 右侧文字 -->
       <div class="rightcontent"> 
-        <div class="name">
-          {{item.name}}
+        <div class="ctitle">
+          {{item.ctitle}}
         </div>
-        <div class="subname">{{item.subname}}</div>
+        <div class="subtitle">{{item.subtitle}}</div>
         <div><van-tag round type="warning">普通</van-tag></div>
         <div class="price">
           <span>¥{{item.price}}</span>
@@ -102,14 +102,14 @@ export default {
   padding:12px 5px 5px 20px;
 }
 /* 右侧标题 */
- .rightcontent .name{
+ .rightcontent .ctitle{
   font-size: 14px;
   padding-right: 10px;
   margin-bottom: 3px;
   position: relative;
 } 
 /* 右侧副标题 */
-.rightcontent .subname{
+.rightcontent .subtitle{
   font-size:8px;
   color:#ccc;
   margin-bottom:5px;
