@@ -3,7 +3,7 @@
     <van-icon name="arrow-left" class="v1"  @click="exit"/>
     <div class="d1">注册</div>
     <van-cell-group>
-      <van-field v-model="phone"  :attr="{autofocus:true}" required clearable label="手机号" placeholder="请输入您的手机号" />
+      <van-field v-model="phone" :attr="{autofocus:true}" required clearable label="手机号" placeholder="请输入您的手机号" />
       <van-cell-group>
         <van-field v-model="sms" center clearable label="短信验证" placeholder="请输入短信验证码" >
           <van-button slot="button" size="small" type="info">发送验证码</van-button>
