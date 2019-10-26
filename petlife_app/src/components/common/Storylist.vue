@@ -34,7 +34,7 @@ export default {
     }
     /* 图片 */
     .Image{
-        width:5.5rem;height:4rem;
+        width:5.5rem;height:4.3rem;
         border-radius: .3rem;
     }
     /* a标签 */
