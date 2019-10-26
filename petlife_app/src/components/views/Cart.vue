@@ -28,7 +28,11 @@ export default {
       }
     })
     .catch(err=>{
-      console.log(err)
+      console.log(err);
+      //如果没有登录，后台相应401，无权限访问，跳转到登录页面
+      if(err.response.status==401){
+        this.$router.push("/login1");
+      }
     })
     //购物车小卡片
     axios.get("cart/card").then(result=>{
@@ -36,7 +40,11 @@ export default {
       this.cardlist=result.data.data;
       // console.log(this.cardlist)
     }).catch(err=>{
-      console.log(err)
+      console.log(err);
+      //如果没有登录，后台相应401，无权限访问，跳转到登录页面
+      if(err.response.status==401){
+        this.$router.push("/login1");
+      }
     })
   },
   components:{

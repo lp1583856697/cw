@@ -20,7 +20,6 @@
 export default {
   name: "App",
   data() {
-    // console.log("this.$route.path", this.$route.path)
     return {
       hideArr: [
         "/Login",
@@ -69,7 +68,24 @@ export default {
       ]
     };
   },
-  created() {}, 
+  created() {
+    this.init();
+  }, 
+  methods:{
+    // 如果用户从地址栏输入url,也判断是否登录
+    init:function(){
+      console.log(this.$route);
+      switch (this.$route.path) {
+        case "/Me":
+        case "/me":
+          if (sessionStorage.isLogin == "true"){
+            this.$router.push("/Me");
+          }else{
+            this.$router.push("/Login1");
+          }
+      }
+    }
+  },
   watch: {
             // selectedId是当前选中的tabbar-item的id
             // oldselectedId 上一次选中的tabbar-item的id
@@ -84,6 +100,7 @@ export default {
           break;
         case "cart":
         case "Me":
+          //如果用户点底部导航栏进购物车或me,判断是否登录
           if (sessionStorage.isLogin == "true") {
             this.$router.push("/" + selectedId);
           } else {

@@ -182,7 +182,7 @@ server.get("/Mygaimi", (req, res) => {
 
 //4.功能四:用户退出登录
 server.get("/mylogout",(req,res)=>{
-  // req.session.user_id = null;
-  req.session.destroy();
+  req.session.user_id = null;
+  // req.session.destroy();
   res.send({code:1,msg:'退出登录'});
 });
