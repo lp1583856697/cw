@@ -59,11 +59,17 @@ export default {
     }
   },
   methods: {
-    exit:function () {
+    exit() {
       this.$router.push("/Me");
     },
-    leave:function () {
-      this.$router.push("/");
+    leave() {
+      // 创建交互确认提示框
+      this.$messagebox.confirm("确定要退出该登录账户吗?")
+      if(this.$messagebox.confirm("确定要退出该登录账户吗?")==false){
+        return false;
+      }else{
+        console.log("退出成功")
+      }
     },
     showPopup() {
       this.show = true;
@@ -87,7 +93,7 @@ export default {
   .d2{
     display: flex;
     justify-content: space-between;
-    line-height: 30px;
+    line-height: 32px;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -108,7 +114,7 @@ export default {
     font-weight: normal;
   }
   .van-button{
-    margin-top: 80px;
+    margin-top: 97px;
     font-size: 18px;
     letter-spacing: 1px;
     color: #fff;

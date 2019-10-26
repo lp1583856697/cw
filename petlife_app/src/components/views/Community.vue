@@ -10,7 +10,7 @@
         <homemore :more="more2"></homemore> 
         <storylist :storylist="storylist"></storylist>      
     </div>
-</template>
+</template>   
 <script>
 import axios from "axios"
 import Pageheader from "../common/Pageheader.vue"

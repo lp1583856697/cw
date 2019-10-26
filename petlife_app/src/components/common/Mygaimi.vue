@@ -1,7 +1,7 @@
 <template>
-  <div class="Myreg1">
+  <div class="Mygaimi">
     <van-icon name="arrow-left" class="v1"  @click="exit"/>
-    <div class="d1">注册</div>
+    <div class="d1">忘记密码</div>
     <van-cell-group>
       <van-field v-model="phone" :attr="{autofocus:true}" required clearable label="手机号" placeholder="请输入您的手机号" />
       <van-cell-group>
@@ -10,13 +10,9 @@
         </van-field>
       </van-cell-group>
       <van-field v-model="upwd" type="password" label="密码" placeholder="6~18位数字/字母/下划线" required />
-      <van-field v-model="ic" label="邀请码" placeholder="请输入邀请码 ( 选填 )" />
     </van-cell-group>
     <div class="d2">语音验证码</div>
-    <van-checkbox v-model="checked" shape="square">   我已阅读并同意
-      <a href="#">《它嗅宠物用户协议》</a>
-    </van-checkbox>
-    <mt-button size="large" @click="reg">立即注册</mt-button>
+    <mt-button size="large" @click="gaimi">确定</mt-button>
   </div>
 </template>
 <script>
@@ -84,7 +80,7 @@ export default {
 }
 </script>
 <style scoped>
-  .Myreg1{ 
+  .Mygaimi{ 
     position: relative;
     justify-content:space-between;
     flex-direction: column;
