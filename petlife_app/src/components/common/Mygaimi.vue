@@ -21,24 +21,20 @@ export default {
     return{
       phone:"",
       sms:"",
-      upwd:"",
-      ic:"",
-      checked:""
+      upwd:""
     }
   },
   methods:{
     exit() {
       this.$router.push("/Login1");
     },
-    reg(){
+    gaimi(){
       var p=this.phone;
       var preg=/^1[3-9]\d{9}$/;
       // var s=this.sms;
       // var sreg=/^\d{4}$/;
       var u=this.upwd;
       var ureg=/^\w{6,18}$/;
-      var i=this.ic;
-      var ireg=/^\w{10}$/;
       if(preg.test(p)==false){
         this.$messagebox("消息","手机号输入有误,请再次确认!");
         return;
@@ -51,12 +47,9 @@ export default {
         this.$messagebox("消息","密码输入有误,请再次确认!");
         return;
       }
-      if(ireg.test(i)==true||ireg.test(i)==""){
-        return;
-      }
       //4.发送ajax请求
-      var url="Myreg";
-      var obj={phone:p,upwd:u,ic:i};
+      var url="Mygaimi";
+      var obj={phone:p,upwd:u};
       //5.获取服务器返回结果
       this.axios.get(
         url,
@@ -64,13 +57,12 @@ export default {
       ).then(res=>{
         console.log(res.data.code);
         if(res.data.code<0){
-          //6.注册失败提示消息
-          sessionStorage.setItem("isReg",false);
-          this.$router.push("/Myreg");
+          //6.更改失败提示消息
+          sessionStorage.setItem("isGaimi",false);
+          this.$messagebox("请确认您输入的内容");
         }else{
           // sessionStorage里面第二个参数保存之后都会变成字符串""
-          sessionStorage.setItem("isReg",true);
-          this.$messagebox("消息","注册成功，请登录！");
+          sessionStorage.setItem("isGaimi",true);
           //跳转登录组件
           this.$router.push("/Login1");
         }
@@ -114,13 +106,6 @@ export default {
     font-weight: 600;
     margin:30px;
     text-align: end;
-  }
-  .van-checkbox{
-    font-size: 13px;
-    margin-bottom: 40px;
-  }
-  a{
-    color: #1571FA;
   }
   .mint-button{
     color:#fff;

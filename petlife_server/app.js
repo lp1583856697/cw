@@ -137,3 +137,31 @@ server.get("/Myreg", (req, res) => {
 //打开浏览器在地址栏输入按回
 //   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
 //   http://127.0.0.1:4006/Myreg?phone=13112345671&sms=1234&upwd=web123456&ic=web123456
+
+//3.功能四:完成用户密码更改
+server.get("/Mygaimi", (req, res) => {
+  var obj=req.query;
+  console.log(obj);
+  var i=0;
+  for(var key in obj){
+		i++;
+		//console.log(key,obj[key]);
+		//如果属性值为空，则提示属性名是必须的
+		if(!obj[key]){
+			res.send({code:i ,msg:key+' required'});
+			return;
+		}
+	}
+	//执行SQL语句
+	pool.query('UPDATE CW_user_login SET ? WHERE phone=?',[obj,obj.phone],
+	function(err,result){
+		if(err)throw err;
+		console.log(result);
+		//判断是否检索到用户，如果检索到，把该用的对象响应到浏览器，否则响应检索不到
+		if(result.affectedRows>0){
+			res.send({code:200,msg:'update suc'});
+		}else{
+			res.send({code:301,msg:'can not found'});
+		}
+	});
+})
