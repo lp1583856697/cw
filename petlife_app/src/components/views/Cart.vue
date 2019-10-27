@@ -31,7 +31,7 @@ export default {
       console.log(err);
       //如果没有登录，后台相应401，无权限访问，跳转到登录页面
       if(err.response.status==401){
-        this.$router.push("/login1");
+        this.$router.push("/login");
       }
     })
     //购物车小卡片
@@ -43,7 +43,7 @@ export default {
       console.log(err);
       //如果没有登录，后台相应401，无权限访问，跳转到登录页面
       if(err.response.status==401){
-        this.$router.push("/login1");
+        this.$router.push("/login");
       }
     })
   },

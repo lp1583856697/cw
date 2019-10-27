@@ -19,7 +19,8 @@ export default {
       this.$router.push("/Login1");
     },
     exit() {
-      this.$router.push("/");
+      //微信登录页面返回到前一个页面
+      this.$router.go(-1);
     }
   },
   props:{

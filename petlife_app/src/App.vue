@@ -41,27 +41,27 @@ export default {
       selected: this.$route.path.substring(1) || "community",
       tablist: [
         {
-          pic: "community.png",
+          pic: "community.svg",
           title: "社区",
           id: "community"
         },
         {
-          pic: "community.png",
+          pic: "store.svg",
           title: "商城",
           id: "shopping"
         },
         {
-          pic: "community.png",
+          pic: "camera.svg",
           title: "它秀",
           id: "Release"
         },
         {
-          pic: "community.png",
+          pic: "cart.svg",
           title: "购物车",
           id: "cart"
         },
         {
-          pic: "community.png",
+          pic: "my.svg",
           title: "我的",
           id: "Me"
         }
@@ -81,7 +81,7 @@ export default {
           if (sessionStorage.isLogin == "true"){
             this.$router.push("/Me");
           }else{
-            this.$router.push("/Login1");
+            this.$router.push("/Login");
           }
       }
     }
@@ -104,10 +104,12 @@ export default {
           if (sessionStorage.isLogin == "true") {
             this.$router.push("/" + selectedId);
           } else {
+            sessionStorage.setItem("oldPath","/"+selectedId);
+            // console.log(sessionStorage.oldPath);
             this.$router.push({
-              path: "/Login1",
+              path: "/Login",
               //oldPath是为了解决登陆之后还要再跳回到原来页面，把oldPath传到Login1组件里面，判断登陆成功后跳转
-              query: { oldPath: "/" + selectedId }
+              // query: { oldPath: "/" + selectedId }
             });
           }
           break;
@@ -133,8 +135,7 @@ export default {
   /*把页面最后的内容挤上来*/
 }
 img {
-  width: 1.2rem;
-  height: 1rem;
+  height: 1.3rem;
   margin-bottom: 0.2rem;
 }
 .mint-tabbar > .mint-tab-item {
