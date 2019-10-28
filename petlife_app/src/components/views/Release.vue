@@ -6,7 +6,7 @@
             </router-link>
         </div>
         <div>
-        <van-tabs v-model="activeName">
+        <van-tabs>
             <van-tab title="精选" name="a">
                 <releaseTwo></releaseTwo>
                 <releaseOne></releaseOne>
