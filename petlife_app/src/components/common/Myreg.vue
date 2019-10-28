@@ -16,7 +16,7 @@
     <van-checkbox v-model="checked" shape="square">   我已阅读并同意
       <a href="#">《它嗅宠物用户协议》</a>
     </van-checkbox>
-    <mt-button size="large" @click="reg">立即注册</mt-button>
+    <mt-button size="large" @click="reg" >立即注册</mt-button>
   </div>
 </template>
 <script>
@@ -27,10 +27,13 @@ export default {
       sms:"",
       upwd:"",
       ic:"",
-      checked:""
+      checked:false
     }
   },
   methods:{
+    if(checked=false){
+      
+    },
     exit() {
       this.$router.push("/Login1");
     },
