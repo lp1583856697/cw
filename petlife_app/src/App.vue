@@ -131,7 +131,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-bottom: 2.6rem;
+  margin-bottom: 3rem;
   /*把页面最后的内容挤上来*/
 }
 img {
