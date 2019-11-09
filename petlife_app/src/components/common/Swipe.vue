@@ -3,7 +3,7 @@
         <van-swipe @change="onChange" :autoplay="3000" indicator-color="white">
             <van-swipe-item v-for="(item,i) of imglist" :key="i">
                 <router-link to="">
-                    <img :src="'http://127.0.0.1:4006/'+item.imgurl">
+                    <img :src="baseUrl+item.imgurl">
                 </router-link>
             </van-swipe-item>
             <div class="custom-indicator" slot="indicator">
@@ -18,21 +18,23 @@
     </div>
 </template>
 <script>
-    export default{
-        props:{
-            imglist:{ default:[] }
-        },
-        data(){
-            return {
-                current:0
-            }
-        },
-        methods:{
-            onChange(index){
-                this.current = index;
-            }
+import { baseUrl } from "../../utils/config";
+export default{
+    props:{
+        imglist:{ default:[] }
+    },
+    data(){
+        return {
+            baseUrl,
+            current:0
+        }
+    },
+    methods:{
+        onChange(index){
+            this.current = index;
         }
     }
+}
 </script>
 <style scoped>
     img{

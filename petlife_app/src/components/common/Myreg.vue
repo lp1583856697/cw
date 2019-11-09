@@ -16,7 +16,7 @@
     <van-checkbox v-model="checked" shape="square">   我已阅读并同意
       <a href="#">《它嗅宠物用户协议》</a>
     </van-checkbox>
-    <mt-button size="large" @click="reg" >立即注册</mt-button>
+    <mt-button size="large" @click="reg" :disabled="!checked">立即注册</mt-button>
   </div>
 </template>
 <script>
@@ -31,9 +31,6 @@ export default {
     }
   },
   methods:{
-    if(checked=false){
-      
-    },
     exit() {
       this.$router.push("/Login1");
     },
@@ -130,8 +127,8 @@ export default {
     color: #1571FA;
   }
   .mint-button{
-    color:#fff;
-    background-color: #ddd;
+    /* color:#fff;
+    background-color: #ddd; */
     letter-spacing: 2px;
     border-radius: 10px;
     font-weight: 600;

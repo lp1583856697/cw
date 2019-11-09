@@ -3,7 +3,7 @@
         <ul class="alllist">
             <li v-for="(item,i) of storylist" :key="i">
                 <router-link to="">
-                    <img :src="'http://127.0.0.1:4006/'+item.pic" class="Image"> 
+                    <img :src="baseUrl+item.pic" class="Image"> 
                     <ul class="alltext">
                         <li class="title">{{item.title}}</li>
                         <li class="text">{{item.text}}</li>
@@ -15,10 +15,11 @@
     </div>
 </template>
 <script>
+import { baseUrl } from "../../utils/config";
 export default {
     data(){
         return {
-
+            baseUrl
         }
     },
     props:{

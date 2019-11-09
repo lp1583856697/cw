@@ -4,8 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from "axios";
+import { baseUrl } from "./utils/config";
 
-axios.defaults.baseURL="http://127.0.0.1:4006/";//请求服务器的基础路径
+axios.defaults.baseURL = baseUrl;//请求服务器的基础路径
 axios.defaults.withCredentials=true;//保存session信息
 Vue.prototype.axios=axios;
 

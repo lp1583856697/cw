@@ -3,7 +3,7 @@
       <ul>
           <li v-for="(item,i) of cardlist" :key="i">
               <router-link to="">
-                   <img :src="'http://127.0.0.1:4006/'+item.pic" class="dogImg">
+                   <img :src="baseUrl+item.pic" class="dogImg">
                     <span class="title">{{item.title}}</span>
                     <span class="pageviews">{{item.pageviews}} 浏览量</span>
                     <span class="likecount">{{item.likecount}} 有用</span>
@@ -14,9 +14,15 @@
 </template>
 
 <script>
+import { baseUrl } from "../../utils/config";
 export default {
     props:{
         cardlist:{ default:[] }
+    },
+    data(){
+        return {
+            baseUrl
+        }
     }
 }
 </script>
